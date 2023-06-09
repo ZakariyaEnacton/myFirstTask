@@ -3,7 +3,7 @@ import SignUp from './Screens/SignUp';
 import Splash from './Screens/Splash';
 
 const App = () => {
-  return <Splash />;
+  return <SignUp />;
 };
 
 export default App;
