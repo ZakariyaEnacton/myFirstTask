@@ -2,17 +2,15 @@ import {View, Text, StatusBar, Image} from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import splashStyle from '../../Screens/Splash/style';
+import {Colors} from '../../Assets/Theme/colors';
+import {AppImages} from '../../Assets/Images';
 
 const Splash = () => {
+  // console.log([Colors.purple, Colors.blue]);
   return (
-    <LinearGradient
-      style={splashStyle.container}
-      colors={['#c8a1ff', '#8eadff']}>
-      <StatusBar backgroundColor="#c8a1ff" barStyle="light-content" />
-      <Image
-        style={{height: 100, width: 100}}
-        source={require('../../Assets/Images/logo.png')}
-      />
+    <LinearGradient style={splashStyle.container} colors={Colors.splashColor}>
+      <StatusBar hidden={true} barStyle="light-content" />
+      <Image style={{height: 100, width: 100}} source={AppImages.appLogo} />
     </LinearGradient>
   );
 };
