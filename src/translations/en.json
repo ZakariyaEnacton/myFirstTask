@@ -7,6 +7,7 @@
   "confirm_pass_place_holder": "Confirm Password",
   "create_acc": "Create Account",
   "start_now": "to get started now!",
-  "navText":"Or Sign Up with",
-  "navLinkTxt":"Already have an account?"
+  "navText": "Or Sign Up with",
+  "navLinkTxt": "Already have an account?",
+  "guest": "Continue as a guest"
 }
