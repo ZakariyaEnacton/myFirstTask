@@ -5,13 +5,19 @@ import Welcome from './Screens/Welcome';
 import Login from './Screens/Login';
 import InputText from './Component/Core/InputText/Email';
 import ButtonLogin from './Component/Core/Buttons/ButtonLogin';
+import RNBootSplash from 'react-native-bootsplash';
+import {useEffect} from 'react';
 
 const App = () => {
+  useEffect(() => {
+    RNBootSplash.hide();
+  }, []);
   return (
     <View style={{flex: 1}}>
-      {/* <ButtonLogin /> */}
-      <Login />
-      {/* <InputText /> */}
+      {/* <Login /> */}
+      {/* <SignUp /> */}
+      {/* <Splash /> */}
+      <Welcome />
     </View>
   );
 };
