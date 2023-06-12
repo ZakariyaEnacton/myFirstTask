@@ -27,10 +27,10 @@ const App = () => {
   return (
     <View style={{flex: 1}}>
       {/* <Login /> */}
-      <SignUp />
+      {/* <SignUp /> */}
       {/* <Splash /> */}
       {/* <Welcome /> */}
-      {/* <AppNavigator /> */}
+      <AppNavigator />
     </View>
   );
 };
