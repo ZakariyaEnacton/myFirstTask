@@ -21,55 +21,69 @@ import Password from '../../Component/Core/InputText/Password';
 import ButtonLogin from '../../Component/Core/Buttons/ButtonLogin';
 import {AppImages} from '../../Assets/Images';
 import MediaButton from '../../Component/Core/Buttons/MediaButton';
+import {Formik} from 'formik';
+import * as Yup from 'yup';
 
-const Login = ({navigation}) => {
+const loginScheema = Yup.object().shape({
+  email: Yup.string().required('Please enter eamil'),
+  password: Yup.string().required('Please enter password'),
+});
+
+const Login = ({navigation, value}) => {
+  console.log('-------', value);
   return (
-    <LinearGradient colors={Colors.splashColor} style={style.container}>
-      <View style={style.headWrapper}>
-        <Text style={[style.headTxt, {...fontStyle.headingBold28}]}>
-          {en.welcome},
-        </Text>
-        <Text
-          style={[
-            style.headTxt,
-            {...fontStyle.headingRegular28, fontWeight: 300},
-          ]}>
-          {en.greeting}
-        </Text>
-      </View>
-      <View>
-        <Email />
-      </View>
-      <View>
-        <Password />
-      </View>
-      <View style={style.frgPassWrapper}>
-        <TouchableOpacity>
-          <Text style={style.frgPassTxt}>{en.forgot_pass}</Text>
-        </TouchableOpacity>
-      </View>
-      <View style={style.buttonWrapper}>
-        <ButtonLogin />
-      </View>
-      <View style={style.navViewWrapper}>
-        <View style={style.horizontalView} />
-        <View>
-          <Text style={style.navTxt}>{en.navText}</Text>
-        </View>
-        <View style={style.horizontalView} />
-      </View>
-      <MediaButton />
-      <View style={style.navLinkTxtWrapper}>
-        <View>
-          <Text style={style.navLinkTxt}>{en.navLinkTxt}</Text>
-        </View>
-        <View style={{marginLeft: 2}}>
-          <TouchableOpacity onPressIn={() => navigation.navigate('SignUp')}>
-            <Text style={style.navLinkBtn}>{en.sign_up_now}</Text>
-          </TouchableOpacity>
-        </View>
-      </View>
-    </LinearGradient>
+    <Formik
+      initialValues={{email: '', password: ''}}
+      validationSchema={loginScheema}>
+      {({}) => (
+        <LinearGradient colors={Colors.splashColor} style={style.container}>
+          <View style={style.headWrapper}>
+            <Text style={[style.headTxt, {...fontStyle.headingBold28}]}>
+              {en.welcome},
+            </Text>
+            <Text
+              style={[
+                style.headTxt,
+                {...fontStyle.headingRegular28, fontWeight: 300},
+              ]}>
+              {en.greeting}
+            </Text>
+          </View>
+          <View>
+            <Email />
+          </View>
+          <View>
+            <Password />
+          </View>
+          <View style={style.frgPassWrapper}>
+            <TouchableOpacity>
+              <Text style={style.frgPassTxt}>{en.forgot_pass}</Text>
+            </TouchableOpacity>
+          </View>
+          <View style={style.buttonWrapper}>
+            <ButtonLogin />
+          </View>
+          <View style={style.navViewWrapper}>
+            <View style={style.horizontalView} />
+            <View>
+              <Text style={style.navTxt}>{en.navText}</Text>
+            </View>
+            <View style={style.horizontalView} />
+          </View>
+          <MediaButton />
+          <View style={style.navLinkTxtWrapper}>
+            <View>
+              <Text style={style.navLinkTxt}>{en.navLinkTxt}</Text>
+            </View>
+            <View style={{marginLeft: 2}}>
+              <TouchableOpacity onPressIn={() => navigation.navigate('SignUp')}>
+                <Text style={style.navLinkBtn}>{en.sign_up_now}</Text>
+              </TouchableOpacity>
+            </View>
+          </View>
+        </LinearGradient>
+      )}
+    </Formik>
   );
 };
 
