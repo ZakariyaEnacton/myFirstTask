@@ -1,11 +1,16 @@
 import {View, Text, StatusBar, Image} from 'react-native';
-import React from 'react';
+import React, {useEffect} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import splashStyle from '../../Screens/Splash/style';
 import {Colors} from '../../Assets/Theme/colors';
 import {AppImages} from '../../Assets/Images';
 
-const Splash = () => {
+const Splash = ({navigation}) => {
+  useEffect(() => {
+    setTimeout(() => {
+      navigation.navigate('Welcome');
+    }, 2000);
+  });
   // console.log([Colors.purple, Colors.blue]);
   return (
     <LinearGradient style={splashStyle.container} colors={Colors.splashColor}>

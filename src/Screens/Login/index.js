@@ -22,7 +22,7 @@ import ButtonLogin from '../../Component/Core/Buttons/ButtonLogin';
 import {AppImages} from '../../Assets/Images';
 import MediaButton from '../../Component/Core/Buttons/MediaButton';
 
-const index = () => {
+const Login = ({navigation}) => {
   return (
     <LinearGradient colors={Colors.splashColor} style={style.container}>
       <View style={style.headWrapper}>
@@ -64,7 +64,7 @@ const index = () => {
           <Text style={style.navLinkTxt}>{en.navLinkTxt}</Text>
         </View>
         <View style={{marginLeft: 2}}>
-          <TouchableOpacity>
+          <TouchableOpacity onPressIn={() => navigation.navigate('SignUp')}>
             <Text style={style.navLinkBtn}>{en.sign_up_now}</Text>
           </TouchableOpacity>
         </View>
@@ -73,4 +73,4 @@ const index = () => {
   );
 };
 
-export default index;
+export default Login;

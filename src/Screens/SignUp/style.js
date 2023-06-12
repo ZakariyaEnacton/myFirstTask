@@ -109,4 +109,9 @@ export default signupStyle = StyleSheet.create({
     color: Colors.white,
     fontWeight: 500,
   },
+  errorTxt: {
+    color: '#000',
+    alignSelf: 'flex-start',
+    marginLeft: 10,
+  },
 });

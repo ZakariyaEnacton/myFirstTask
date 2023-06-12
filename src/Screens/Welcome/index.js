@@ -6,7 +6,7 @@ import {AppImages} from '../../Assets/Images';
 import style from './style';
 import en from '../../translations/en.json';
 
-const Welcome = () => {
+const Welcome = ({navigation}) => {
   return (
     <LinearGradient style={style.container} colors={Colors.splashColor}>
       <StatusBar hidden={true} />
@@ -18,14 +18,18 @@ const Welcome = () => {
           <Text style={style.appTxt}>{en.app_name}</Text>
         </View>
         <View style={[style.buttonWrapper, {top: 10}]}>
-          <TouchableOpacity style={[style.button, style.btnLogin]}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('Login')}
+            style={[style.button, style.btnLogin]}>
             <Text style={[style.btnText, {color: Colors.black}]}>
               {en.login}
             </Text>
           </TouchableOpacity>
         </View>
         <View style={[style.buttonWrapper, {top: 30}]}>
-          <TouchableOpacity style={[style.button, style.btnSignUp]}>
+          <TouchableOpacity
+            onPress={() => navigation.navigate('SignUp')}
+            style={[style.button, style.btnSignUp]}>
             <Text
               style={[style.btnText, {color: Colors.white, fontWeight: 400}]}>
               {en.sign_up}
