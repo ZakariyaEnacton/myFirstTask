@@ -7,6 +7,7 @@ import Splash from '../Screens/Splash';
 import SignUp from '../Screens/SignUp';
 import Login from '../Screens/Login';
 import RNBootSplash from 'react-native-bootsplash';
+import Home from '../Screens/Home';
 
 const Stack = createNativeStackNavigator();
 
@@ -20,6 +21,7 @@ const AppNavigator = () => {
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={Home} />
       </Stack.Navigator>
     </NavigationContainer>
   );
