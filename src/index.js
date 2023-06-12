@@ -16,8 +16,8 @@ const App = () => {
     <View style={{flex: 1}}>
       {/* <Login /> */}
       {/* <SignUp /> */}
-      {/* <Splash /> */}
-      <Welcome />
+      <Splash />
+      {/* <Welcome /> */}
     </View>
   );
 };
