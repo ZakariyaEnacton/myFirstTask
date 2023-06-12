@@ -4,7 +4,7 @@ import en from '../../../../translations/en.json';
 import {Colors} from '../../../../Assets/Theme/colors';
 import style from './style';
 
-const Email = (placeHolder, placeholderTextColor) => {
+const Email = () => {
   return (
     <View>
       <TextInput
