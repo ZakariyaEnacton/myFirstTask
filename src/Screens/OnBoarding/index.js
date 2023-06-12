@@ -28,9 +28,11 @@ const slides = [
   },
 ];
 const OnBoarding = () => {
-  const scrollToIndex = (getCurrentIndex, goToLastIndex) => {
-    console.log('i--------------', getCurrentIndex, goToLastIndex);
-  };
+  const [index, setIndex] = useState(0);
+
+  //   const scrollToIndex = (getCurrentIndex, goToLastIndex) => {
+  //     console.log('i--------------', getCurrentIndex, goToLastIndex);
+  //   };
   return (
     <View style={{flex: 1}}>
       <StatusBar hidden />
@@ -54,7 +56,7 @@ const OnBoarding = () => {
         }}
       />
       <TouchableOpacity
-        onPress={scrollToIndex}
+        onPress={() => setIndex()}
         // onPress={goToNextIndex =>
         //   console.log('index--------------', goToNextIndex)
         // }
