@@ -38,7 +38,7 @@ const SignUp = ({navigation}) => {
   // console.log('Nav--------', props);
   const sendUser = () => {
     console.log('pressed');
-    navigation.navigate('Login');
+    navigation.navigate('Home');
   };
   return (
     <Formik
@@ -51,7 +51,6 @@ const SignUp = ({navigation}) => {
         values,
         errors,
         touched,
-        handleBlur,
         handleChange,
         handleSubmit,
         isValid,
