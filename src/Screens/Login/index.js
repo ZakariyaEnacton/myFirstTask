@@ -17,6 +17,7 @@ import {fontStyle} from '../../Assets/Theme/fontStyle';
 import InputText from '../../Component/Core/InputText/Email';
 import Email from '../../Component/Core/InputText/Email';
 import Password from '../../Component/Core/InputText/Password';
+import ButtonLogin from '../../Component/Core/Buttons/ButtonLogin';
 
 const index = () => {
   return (
@@ -44,10 +45,8 @@ const index = () => {
           <Text style={style.frgPassTxt}>{en.forgot_pass}</Text>
         </TouchableOpacity>
       </View>
-      <View>
-        <TouchableOpacity>
-          <Text>{en.login}</Text>
-        </TouchableOpacity>
+      <View style={style.buttonWrapper}>
+        <ButtonLogin />
       </View>
     </LinearGradient>
   );

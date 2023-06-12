@@ -35,4 +35,8 @@ export default style = StyleSheet.create({
     textDecorationLine: 'underline',
     color: Colors.white,
   },
+  buttonWrapper: {
+    alignSelf: 'center',
+    marginTop: 30,
+  },
 });
