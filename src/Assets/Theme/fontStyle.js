@@ -6,6 +6,27 @@ export const fontStyle = {
   headingRegular: {
     fontSize: 30,
   },
+  headingBold28: {
+    fontSize: 28,
+    fontWeight: 700,
+  },
+  headingRegular28: {
+    fontSize: 28,
+  },
+  headingBold26: {
+    fontSize: 26,
+    fontWeight: 700,
+  },
+  headingRegular26: {
+    fontSize: 26,
+  },
+  headingBold24: {
+    fontSize: 24,
+    fontWeight: 700,
+  },
+  headingRegular24: {
+    fontSize: 24,
+  },
   h1Bold: {
     fontSize: 18,
     fontWeight: 700,

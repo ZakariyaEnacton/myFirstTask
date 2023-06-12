@@ -9,5 +9,8 @@
   "start_now": "to get started now!",
   "navText": "Or Sign Up with",
   "navLinkTxt": "Already have an account?",
-  "guest": "Continue as a guest"
+  "guest": "Continue as a guest",
+  "welcome":"Welcome",
+  "greeting":"Glad to see you!",
+  "forgot_pass":"Forgot Password?"
 }
