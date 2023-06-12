@@ -1,11 +1,4 @@
-import {
-  View,
-  Text,
-  Image,
-  Button,
-  StatusBar,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, Image, StatusBar, TouchableOpacity} from 'react-native';
 import React, {useRef, useState} from 'react';
 import {AppImages} from '../../Assets/Images';
 import SwiperFlatList from 'react-native-swiper-flatlist';
@@ -35,6 +28,9 @@ const slides = [
   },
 ];
 const OnBoarding = () => {
+  const scrollToIndex = (getCurrentIndex, goToLastIndex) => {
+    console.log('i--------------', getCurrentIndex, goToLastIndex);
+  };
   return (
     <View style={{flex: 1}}>
       <StatusBar hidden />
@@ -58,7 +54,11 @@ const OnBoarding = () => {
         }}
       />
       <TouchableOpacity
-        onPress={index => console.log('index--------------', index)}>
+        onPress={scrollToIndex}
+        // onPress={goToNextIndex =>
+        //   console.log('index--------------', goToNextIndex)
+        // }
+      >
         <Text
           style={{
             bottom: 30,
