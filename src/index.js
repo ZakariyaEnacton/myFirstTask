@@ -8,6 +8,7 @@ import ButtonLogin from './Component/Core/Buttons/ButtonLogin';
 import RNBootSplash from 'react-native-bootsplash';
 import {useEffect} from 'react';
 import AppNavigator from './Navigation/appNavigator';
+import OnBoarding from './Screens/OnBoarding';
 
 const App = () => {
   useEffect(() => {
@@ -30,7 +31,8 @@ const App = () => {
       {/* <SignUp /> */}
       {/* <Splash /> */}
       {/* <Welcome /> */}
-      <AppNavigator />
+      {/* <AppNavigator /> */}
+      <OnBoarding />
     </View>
   );
 };
