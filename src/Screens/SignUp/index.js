@@ -82,7 +82,7 @@ const SignUp = () => {
           </View>
           <View style={{marginLeft: 2}}>
             <TouchableOpacity>
-              <Text style={style.navLinkBtn}>Login Now</Text>
+              <Text style={style.navLinkBtn}>{en.login_Now}</Text>
             </TouchableOpacity>
           </View>
         </View>

@@ -12,5 +12,7 @@
   "guest": "Continue as a guest",
   "welcome":"Welcome",
   "greeting":"Glad to see you!",
-  "forgot_pass":"Forgot Password?"
+  "forgot_pass":"Forgot Password?",
+  "sign_up_now":"Sign Up Now",
+  "login_Now":"Login Now"
 }

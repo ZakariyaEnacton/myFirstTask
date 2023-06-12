@@ -39,4 +39,42 @@ export default style = StyleSheet.create({
     alignSelf: 'center',
     marginTop: 30,
   },
+  navViewWrapper: {
+    marginTop: 50,
+    flexDirection: 'row',
+    alignItems: 'center',
+    marginLeft: 25,
+    marginRight: 25,
+  },
+  navView: {
+    height: 0.5,
+    backgroundColor: Colors.white,
+    flex: 1,
+  },
+  horizontalView: {
+    flex: 1,
+    height: 0.5,
+    backgroundColor: Colors.white,
+  },
+  navTxt: {
+    textAlign: 'center',
+    marginLeft: 10,
+    marginRight: 10,
+    color: Colors.white,
+  },
+  navLinkTxtWrapper: {
+    flexDirection: 'row',
+    alignSelf: 'center',
+    position: 'absolute',
+    bottom: 20,
+  },
+  navLinkTxt: {
+    color: Colors.white,
+    fontWeight: 300,
+  },
+  navLinkBtn: {
+    textDecorationLine: 'underline',
+    color: Colors.white,
+    fontWeight: 500,
+  },
 });

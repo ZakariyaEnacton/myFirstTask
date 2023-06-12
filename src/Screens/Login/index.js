@@ -7,6 +7,7 @@ import {
   TextInput,
   Touchable,
   TouchableOpacity,
+  Image,
 } from 'react-native';
 import React from 'react';
 import LinearGradient from 'react-native-linear-gradient';
@@ -18,6 +19,8 @@ import InputText from '../../Component/Core/InputText/Email';
 import Email from '../../Component/Core/InputText/Email';
 import Password from '../../Component/Core/InputText/Password';
 import ButtonLogin from '../../Component/Core/Buttons/ButtonLogin';
+import {AppImages} from '../../Assets/Images';
+import MediaButton from '../../Component/Core/Buttons/MediaButton';
 
 const index = () => {
   return (
@@ -47,6 +50,24 @@ const index = () => {
       </View>
       <View style={style.buttonWrapper}>
         <ButtonLogin />
+      </View>
+      <View style={style.navViewWrapper}>
+        <View style={style.horizontalView} />
+        <View>
+          <Text style={style.navTxt}>{en.navText}</Text>
+        </View>
+        <View style={style.horizontalView} />
+      </View>
+      <MediaButton />
+      <View style={style.navLinkTxtWrapper}>
+        <View>
+          <Text style={style.navLinkTxt}>{en.navLinkTxt}</Text>
+        </View>
+        <View style={{marginLeft: 2}}>
+          <TouchableOpacity>
+            <Text style={style.navLinkBtn}>{en.sign_up_now}</Text>
+          </TouchableOpacity>
+        </View>
       </View>
     </LinearGradient>
   );
