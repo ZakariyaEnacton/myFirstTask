@@ -4,7 +4,6 @@ import Splash from './Screens/Splash';
 import Welcome from './Screens/Welcome';
 import Login from './Screens/Login';
 import InputText from './Component/Core/InputText/';
-import ButtonLogin from './Component/Core/Buttons/Button';
 import RNBootSplash from 'react-native-bootsplash';
 import {useEffect} from 'react';
 import AppNavigator from './Navigation/appNavigator';

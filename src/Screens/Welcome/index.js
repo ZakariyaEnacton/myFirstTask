@@ -5,7 +5,7 @@ import {Colors} from '../../Assets/Theme/colors';
 import {AppImages} from '../../Assets/Images';
 import style from './style';
 import en from '../../translations/en.json';
-import ButtonPrimary from '../../Component/Core/Buttons/Button';
+import ButtonPrimary from '../../Component/Core/Button';
 
 const Welcome = ({navigation}) => {
   return (
@@ -20,7 +20,7 @@ const Welcome = ({navigation}) => {
         </View>
         <View style={[style.buttonWrapper, {top: 10}]}>
           <ButtonPrimary
-            name={'Login'}
+            name={en.login}
             onPress={() => navigation.navigate('Login')}
           />
         </View>

@@ -9,7 +9,7 @@ import MediaButton from '../../Component/Core/MediaButton';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import InputText from '../../Component/Core/InputText';
-import ButtonPrimary from '../../Component/Core/Buttons/Button';
+import ButtonPrimary from '../../Component/Core/Button';
 
 const loginScheema = Yup.object().shape({
   email: Yup.string(`- /\S+@\S+\. \S+/`)
@@ -80,7 +80,7 @@ const Login = ({navigation}) => {
           </View>
           <View style={style.buttonWrapper}>
             <ButtonPrimary
-              name={'Login'}
+              name={en.login}
               onPress={() => console.log('pressed')}
             />
           </View>
