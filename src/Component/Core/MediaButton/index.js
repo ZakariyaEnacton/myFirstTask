@@ -1,7 +1,7 @@
 import {View, Text, TouchableOpacity, Image} from 'react-native';
 import React from 'react';
 import style from './style';
-import {AppImages} from '../../../../Assets/Images';
+import {AppImages} from '../../../Assets/Images';
 
 const MediaButton = () => {
   return (

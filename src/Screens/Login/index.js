@@ -5,7 +5,7 @@ import {Colors} from '../../Assets/Theme/colors';
 import en from '../../translations/en.json';
 import style from '../Login/style';
 import {fontStyle} from '../../Assets/Theme/fontStyle';
-import MediaButton from '../../Component/Core/Buttons/MediaButton';
+import MediaButton from '../../Component/Core/MediaButton';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import InputText from '../../Component/Core/InputText';
@@ -79,7 +79,10 @@ const Login = ({navigation}) => {
             </TouchableOpacity>
           </View>
           <View style={style.buttonWrapper}>
-            <ButtonPrimary name={'Login'} />
+            <ButtonPrimary
+              name={'Login'}
+              onPress={() => console.log('pressed')}
+            />
           </View>
           <View style={style.navViewWrapper}>
             <View style={style.horizontalView} />

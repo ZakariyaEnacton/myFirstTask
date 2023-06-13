@@ -5,6 +5,7 @@ import {Colors} from '../../Assets/Theme/colors';
 import {AppImages} from '../../Assets/Images';
 import style from './style';
 import en from '../../translations/en.json';
+import ButtonPrimary from '../../Component/Core/Buttons/Button';
 
 const Welcome = ({navigation}) => {
   return (
@@ -18,13 +19,10 @@ const Welcome = ({navigation}) => {
           <Text style={style.appTxt}>{en.app_name}</Text>
         </View>
         <View style={[style.buttonWrapper, {top: 10}]}>
-          <TouchableOpacity
+          <ButtonPrimary
+            name={'Login'}
             onPress={() => navigation.navigate('Login')}
-            style={[style.button, style.btnLogin]}>
-            <Text style={[style.btnText, {color: Colors.black}]}>
-              {en.login}
-            </Text>
-          </TouchableOpacity>
+          />
         </View>
         <View style={[style.buttonWrapper, {top: 30}]}>
           <TouchableOpacity

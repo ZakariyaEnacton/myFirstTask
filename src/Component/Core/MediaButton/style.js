@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors} from '../../../../Assets/Theme/colors';
+import {Colors} from '../../../Assets/Theme/colors';
 
 export default style = StyleSheet.create({
   mediaBtnWrapper: {
