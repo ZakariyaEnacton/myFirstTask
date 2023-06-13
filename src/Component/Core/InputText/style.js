@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors} from '../../../../Assets/Theme/colors';
+import {Colors} from '../../../Assets/Theme/colors';
 
 export default style = StyleSheet.create({
   input: {
@@ -13,5 +13,10 @@ export default style = StyleSheet.create({
     elevation: 2,
     padding: 10,
     color: Colors.white,
+  },
+  errorTxt: {
+    color: '#000',
+    alignSelf: 'flex-start',
+    marginLeft: 10,
   },
 });

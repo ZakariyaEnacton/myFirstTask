@@ -77,4 +77,10 @@ export default style = StyleSheet.create({
     color: Colors.white,
     fontWeight: 500,
   },
+  errorTxt: {
+    color: '#000',
+    alignSelf: 'flex-start',
+    marginLeft: 25,
+    marginTop: 5,
+  },
 });

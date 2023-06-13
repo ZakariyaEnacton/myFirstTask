@@ -1,20 +1,23 @@
 import {View, Text, TextInput} from 'react-native';
 import React from 'react';
 import style from './style';
-import en from '../../../../translations/en.json';
-import {Colors} from '../../../../Assets/Theme/colors';
+import {Colors} from '../../../Assets/Theme/colors';
 
-const Password = () => {
+const InputText = props => {
+  console.log(props);
   return (
     <View>
       <TextInput
         style={style.input}
-        placeholder={en.pass_place_holder}
         placeholderTextColor={Colors.white}
         cursorColor={Colors.white}
+        placeholder={props.placeholder}
+        value={props.value}
+        onChangeText={props.onChangeText}
+        onBlur={props.onBlur}
       />
     </View>
   );
 };
 
-export default Password;
+export default InputText;
