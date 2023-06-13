@@ -31,8 +31,8 @@ const App = () => {
       {/* <SignUp /> */}
       {/* <Splash /> */}
       {/* <Welcome /> */}
-      {/* <AppNavigator /> */}
-      <OnBoarding />
+      <AppNavigator />
+      {/* <OnBoarding /> */}
     </View>
   );
 };

@@ -8,7 +8,7 @@ import {AppImages} from '../../Assets/Images';
 const Splash = ({navigation}) => {
   useEffect(() => {
     setTimeout(() => {
-      navigation.navigate('Welcome');
+      navigation.navigate('OnBoarding');
     }, 2000);
   });
   // console.log([Colors.purple, Colors.blue]);
