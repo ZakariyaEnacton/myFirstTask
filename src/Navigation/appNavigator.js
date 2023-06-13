@@ -8,6 +8,7 @@ import SignUp from '../Screens/SignUp';
 import Login from '../Screens/Login';
 import RNBootSplash from 'react-native-bootsplash';
 import Home from '../Screens/Home';
+import OnBoarding from '../Screens/OnBoarding';
 
 const Stack = createNativeStackNavigator();
 
@@ -18,6 +19,7 @@ const AppNavigator = () => {
         screenOptions={{headerShown: false}}
         initialRouteName="Splash">
         <Stack.Screen name="Splash" component={Splash} />
+        <Stack.Screen name="OnBoarding" component={OnBoarding} />
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="SignUp" component={SignUp} />
         <Stack.Screen name="Login" component={Login} />
