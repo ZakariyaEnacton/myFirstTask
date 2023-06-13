@@ -66,6 +66,7 @@ const Login = ({navigation}) => {
             <InputText
               placeholder={'Password'}
               value={values.password}
+              secureTextEntry={true}
               onChangeText={handleChange('password')}
               onBlur={() => setFieldTouched('password')}
             />
@@ -81,7 +82,7 @@ const Login = ({navigation}) => {
           <View style={style.buttonWrapper}>
             <ButtonPrimary
               name={en.login}
-              onPress={() => console.log('pressed')}
+              onPress={() => navigation.navigate('Home')}
             />
           </View>
           <View style={style.navViewWrapper}>
