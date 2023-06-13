@@ -32,10 +32,14 @@ const OnBoarding = ({navigation}) => {
   const refIndex = useRef(null);
 
   const handleNextScroll = () => {
-    refIndex.current.scrollToIndex({
-      index: crrIndex + 1,
-      animated: true,
-    });
+    if (crrIndex != slides.length - 1) {
+      refIndex.current.scrollToIndex({
+        index: crrIndex + 1,
+        animated: true,
+      });
+    } else {
+      navigation.navigate('Welcome');
+    }
   };
 
   const handlePrevIndex = () => {
@@ -61,28 +65,28 @@ const OnBoarding = ({navigation}) => {
         paginationStyle={{bottom: 40}}
         paginationStyleItem={{height: 8, width: 7}}
         paginationActiveColor="blue"
-        onChangeIndex={({index, prevIndex}) => setCrrIndex(index)}
+        onChangeIndex={({index}) => setCrrIndex(index)}
       />
-      <TouchableOpacity
-        onPress={() => {
-          handleNextScroll();
-        }}>
-        <Text
-          style={{
-            bottom: 30,
-            alignSelf: 'flex-end',
-            right: 40,
-          }}>
-          Next
-        </Text>
-      </TouchableOpacity>
-      <TouchableOpacity
-        onPress={() => {
-          handlePrevIndex();
-        }}
-        style={{bottom: 50, alignSelf: 'flex-start', left: 40}}>
-        <Text>Prev</Text>
-      </TouchableOpacity>
+      <View style={style.buttonWrapper}>
+        <View style={style.btnNext}>
+          <TouchableOpacity
+            onPress={() => {
+              handleNextScroll();
+            }}>
+            <Text>Next</Text>
+          </TouchableOpacity>
+        </View>
+        {crrIndex == 0 ? null : (
+          <View style={style.btnPrev}>
+            <TouchableOpacity
+              onPress={() => {
+                handlePrevIndex();
+              }}>
+              <Text>Prev</Text>
+            </TouchableOpacity>
+          </View>
+        )}
+      </View>
     </View>
   );
 };

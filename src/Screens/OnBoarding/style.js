@@ -20,4 +20,16 @@ export default style = StyleSheet.create({
     width: width * 0.85,
     textAlign: 'center',
   },
+  buttonWrapper: {
+    flexDirection: 'row',
+    width: '100%',
+  },
+  btnNext: {
+    right: -320,
+    bottom: 50,
+  },
+  btnPrev: {
+    right: -12,
+    bottom: 50,
+  },
 });
