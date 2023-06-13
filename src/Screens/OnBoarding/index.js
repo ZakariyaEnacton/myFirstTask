@@ -27,16 +27,28 @@ const slides = [
     image: AppImages.onboarding3,
   },
 ];
-const OnBoarding = () => {
-  const [index, setIndex] = useState(0);
+const OnBoarding = ({navigation}) => {
+  const [crrIndex, setCrrIndex] = useState(0);
+  const refIndex = useRef(null);
 
-  //   const scrollToIndex = (getCurrentIndex, goToLastIndex) => {
-  //     console.log('i--------------', getCurrentIndex, goToLastIndex);
-  //   };
+  const handleNextScroll = () => {
+    refIndex.current.scrollToIndex({
+      index: crrIndex + 1,
+      animated: true,
+    });
+  };
+
+  const handlePrevIndex = () => {
+    refIndex.current.scrollToIndex({
+      index: crrIndex - 1,
+      animated: true,
+    });
+  };
   return (
     <View style={{flex: 1}}>
       <StatusBar hidden />
       <SwiperFlatList
+        ref={refIndex}
         data={slides}
         renderItem={({item}) => (
           <View style={style.container}>
@@ -49,18 +61,12 @@ const OnBoarding = () => {
         paginationStyle={{bottom: 40}}
         paginationStyleItem={{height: 8, width: 7}}
         paginationActiveColor="blue"
-        onChangeIndex={({index, prevIndex}) => {
-          {
-            console.log(index, prevIndex);
-          }
-        }}
+        onChangeIndex={({index, prevIndex}) => setCrrIndex(index)}
       />
       <TouchableOpacity
-        onPress={() => setIndex()}
-        // onPress={goToNextIndex =>
-        //   console.log('index--------------', goToNextIndex)
-        // }
-      >
+        onPress={() => {
+          handleNextScroll();
+        }}>
         <Text
           style={{
             bottom: 30,
@@ -70,7 +76,11 @@ const OnBoarding = () => {
           Next
         </Text>
       </TouchableOpacity>
-      <TouchableOpacity style={{bottom: 50, alignSelf: 'flex-start', left: 40}}>
+      <TouchableOpacity
+        onPress={() => {
+          handlePrevIndex();
+        }}
+        style={{bottom: 50, alignSelf: 'flex-start', left: 40}}>
         <Text>Prev</Text>
       </TouchableOpacity>
     </View>
