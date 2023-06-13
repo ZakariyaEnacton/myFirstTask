@@ -6,7 +6,7 @@ import {Colors} from '../../../Assets/Theme/colors';
 const InputText = props => {
   console.log(props);
   return (
-    <View>
+    <View style={style.container}>
       <TextInput
         style={style.input}
         placeholderTextColor={Colors.white}

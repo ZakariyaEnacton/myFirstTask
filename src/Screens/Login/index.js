@@ -62,7 +62,7 @@ const Login = ({navigation}) => {
               <Text style={style.errorTxt}>{errors.email}</Text>
             )}
           </View>
-          <View style={{marginTop: 10}}>
+          <View>
             <InputText
               placeholder={'Password'}
               value={values.password}

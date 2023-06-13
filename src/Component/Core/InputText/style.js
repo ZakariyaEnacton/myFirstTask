@@ -2,6 +2,9 @@ import {StyleSheet} from 'react-native';
 import {Colors} from '../../../Assets/Theme/colors';
 
 export default style = StyleSheet.create({
+  container: {
+    marginTop: 10,
+  },
   input: {
     borderWidth: 1,
     width: 350,

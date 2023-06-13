@@ -79,20 +79,6 @@ export default signupStyle = StyleSheet.create({
     marginRight: 10,
     color: Colors.white,
   },
-  mediaBtnWrapper: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    marginTop: 25,
-  },
-  btnMedia: {
-    backgroundColor: Colors.white,
-    padding: 12,
-    width: 165,
-    borderRadius: 10,
-    alignItems: 'center',
-    shadowColor: Colors.black,
-    elevation: 2,
-  },
   navLinkTxtWrapper: {
     flexDirection: 'row',
     alignItems: 'center',
@@ -112,6 +98,7 @@ export default signupStyle = StyleSheet.create({
   errorTxt: {
     color: '#000',
     alignSelf: 'flex-start',
-    marginLeft: 10,
+    marginLeft: 5,
+    marginTop: 5,
   },
 });

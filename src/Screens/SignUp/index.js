@@ -16,6 +16,8 @@ import {AppImages} from '../../Assets/Images';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
 import Login from '../Login';
+import InputText from '../../Component/Core/InputText';
+import MediaButton from '../../Component/Core/MediaButton';
 
 const SignUpSchema = Yup.object().shape({
   email: Yup.string(`- /\S+@\S+\. \S+/`)
@@ -70,7 +72,7 @@ const SignUp = ({navigation}) => {
                 <Text style={style.titleStart}>{en.start_now}</Text>
               </View>
               <View style={signupStyle.inputWrapper}>
-                <TextInput
+                <InputText
                   placeholderTextColor={Colors.white}
                   style={signupStyle.input}
                   placeholder={en.email_place_holder}
@@ -84,7 +86,7 @@ const SignUp = ({navigation}) => {
                 )}
               </View>
               <View>
-                <TextInput
+                <InputText
                   placeholderTextColor={Colors.white}
                   style={signupStyle.input}
                   placeholder={en.pass_place_holder}
@@ -98,7 +100,7 @@ const SignUp = ({navigation}) => {
                 )}
               </View>
               <View>
-                <TextInput
+                <InputText
                   placeholderTextColor={Colors.white}
                   style={signupStyle.input}
                   placeholder={en.confirm_pass_place_holder}
@@ -124,17 +126,8 @@ const SignUp = ({navigation}) => {
               </View>
               <View style={style.horizontalView} />
             </View>
-            <View style={style.mediaBtnWrapper}>
-              <View>
-                <TouchableOpacity style={[style.btnMedia, {marginLeft: 25}]}>
-                  <Image source={AppImages.googleImg} />
-                </TouchableOpacity>
-              </View>
-              <View>
-                <TouchableOpacity style={[style.btnMedia, {marginRight: 25}]}>
-                  <Image source={AppImages.facebookImg} />
-                </TouchableOpacity>
-              </View>
+            <View>
+              <MediaButton />
             </View>
           </View>
           <View style={style.navLinkTxtWrapper}>
