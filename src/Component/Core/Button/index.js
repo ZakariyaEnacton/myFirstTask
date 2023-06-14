@@ -6,7 +6,7 @@ const ButtonPrimary = props => {
   return (
     <View>
       <TouchableOpacity
-        style={style.button}
+        style={[style.button, props.style]}
         onPress={props.onPress}
         disabled={props.disabled}>
         <Text style={style.btnText}>{props.name}</Text>

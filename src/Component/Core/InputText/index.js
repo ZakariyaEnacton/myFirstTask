@@ -4,7 +4,6 @@ import style from './style';
 import {Colors} from '../../../Assets/Theme/colors';
 
 const InputText = props => {
-  console.log(props);
   return (
     <View style={style.container}>
       <TextInput

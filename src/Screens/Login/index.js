@@ -89,7 +89,10 @@ const Login = ({navigation}) => {
             <ButtonPrimary
               name={en.login}
               onPress={handleSubmit}
-              // disabled={!isValid}
+              disabled={!isValid}
+              style={{
+                backgroundColor: !isValid ? Colors.gray : Colors.white,
+              }}
             />
           </View>
           <View style={style.navViewWrapper}>

@@ -18,6 +18,8 @@ import * as Yup from 'yup';
 import Login from '../Login';
 import InputText from '../../Component/Core/InputText';
 import MediaButton from '../../Component/Core/MediaButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import ButtonPrimary from '../../Component/Core/Button';
 
 const SignUpSchema = Yup.object().shape({
   email: Yup.string(`- /\S+@\S+\. \S+/`)
@@ -37,11 +39,15 @@ const SignUpSchema = Yup.object().shape({
 });
 
 const SignUp = ({navigation}) => {
-  // console.log('Nav--------', props);
+  const setUser = async () => {
+    await AsyncStorage.setItem('user');
+  };
+
   const sendUser = () => {
     console.log('pressed');
     navigation.navigate('Home');
   };
+
   return (
     <Formik
       initialValues={{email: '', password: '', confirmPassword: ''}}
@@ -114,9 +120,17 @@ const SignUp = ({navigation}) => {
                 )}
               </View>
               <View style={style.buttonWrapper}>
-                <TouchableOpacity onPress={handleSubmit} style={style.button}>
+                <ButtonPrimary
+                  disabled={!isValid}
+                  onPress={handleSubmit}
+                  name={en.sign_up}
+                  style={{
+                    backgroundColor: !isValid ? Colors.gray : Colors.white,
+                  }}
+                />
+                {/* <TouchableOpacity onPress={handleSubmit} style={style.button}>
                   <Text style={style.btnText}>{en.sign_up}</Text>
-                </TouchableOpacity>
+                </TouchableOpacity> */}
               </View>
             </View>
             <View style={style.navViewWrapper}>
