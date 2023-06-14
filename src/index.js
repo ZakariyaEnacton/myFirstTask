@@ -8,6 +8,7 @@ import RNBootSplash from 'react-native-bootsplash';
 import {useEffect} from 'react';
 import AppNavigator from './Navigation/appNavigator';
 import OnBoarding from './Screens/OnBoarding';
+import Home from './Screens/Home';
 
 const App = () => {
   useEffect(() => {
@@ -32,6 +33,7 @@ const App = () => {
       {/* <Welcome /> */}
       <AppNavigator />
       {/* <OnBoarding /> */}
+      {/* <Home /> */}
     </View>
   );
 };

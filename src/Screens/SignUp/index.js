@@ -6,7 +6,7 @@ import {
   StatusBar,
   Image,
 } from 'react-native';
-import React from 'react';
+import React, {useState} from 'react';
 import en from '../../translations/en.json';
 import signupStyle from './style';
 import style from './style';
@@ -18,8 +18,8 @@ import * as Yup from 'yup';
 import Login from '../Login';
 import InputText from '../../Component/Core/InputText';
 import MediaButton from '../../Component/Core/MediaButton';
-import AsyncStorage from '@react-native-async-storage/async-storage';
 import ButtonPrimary from '../../Component/Core/Button';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SignUpSchema = Yup.object().shape({
   email: Yup.string(`- /\S+@\S+\. \S+/`)
@@ -39,19 +39,16 @@ const SignUpSchema = Yup.object().shape({
 });
 
 const SignUp = ({navigation}) => {
-  const setUser = async () => {
-    await AsyncStorage.setItem('user');
-  };
-
   const sendUser = () => {
-    console.log('pressed');
     navigation.navigate('Home');
   };
 
   return (
     <Formik
       initialValues={{email: '', password: '', confirmPassword: ''}}
-      onSubmit={() => {
+      onSubmit={async value => {
+        const data = JSON.stringify(value);
+        await AsyncStorage.setItem('user', data);
         sendUser();
       }}
       validationSchema={SignUpSchema}>
@@ -128,9 +125,6 @@ const SignUp = ({navigation}) => {
                     backgroundColor: !isValid ? Colors.gray : Colors.white,
                   }}
                 />
-                {/* <TouchableOpacity onPress={handleSubmit} style={style.button}>
-                  <Text style={style.btnText}>{en.sign_up}</Text>
-                </TouchableOpacity> */}
               </View>
             </View>
             <View style={style.navViewWrapper}>
