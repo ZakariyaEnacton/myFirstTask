@@ -1,28 +1,19 @@
-import {
-  View,
-  Text,
-  TextInput,
-  TouchableOpacity,
-  StatusBar,
-  Image,
-} from 'react-native';
+import {View, Text, TouchableOpacity, StatusBar} from 'react-native';
 import React, {useState} from 'react';
 import en from '../../translations/en.json';
 import signupStyle from './style';
 import style from './style';
 import LinearGradient from 'react-native-linear-gradient';
 import {Colors} from '../../Assets/Theme/colors';
-import {AppImages} from '../../Assets/Images';
 import {Formik} from 'formik';
 import * as Yup from 'yup';
-import Login from '../Login';
 import InputText from '../../Component/Core/InputText';
 import MediaButton from '../../Component/Core/MediaButton';
 import ButtonPrimary from '../../Component/Core/Button';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const SignUpSchema = Yup.object().shape({
-  email: Yup.string(`- /\S+@\S+\. \S+/`)
+  email: Yup.string(`- /\S+@\S+\.\S+/`)
     .email('Invalid email')
     .required('Please enter email address'),
   password: Yup.string()
@@ -39,17 +30,42 @@ const SignUpSchema = Yup.object().shape({
 });
 
 const SignUp = ({navigation}) => {
-  const sendUser = () => {
+  const [data, setData] = useState([]);
+
+  const sendUser = async val => {
+    const dataValue = JSON.parse(await AsyncStorage.getItem('user'));
+    setData(dataValue);
+
+    const userData = {
+      email: val.email,
+      password: val.password,
+    };
+    await AsyncStorage.setItem('user', JSON.stringify(userData));
+
+    // setData([...existData, userData]);
+
+    // setData(prevData => [...prevData, userData]);
+
+    // const userData = {
+    //   email: val.email,
+    //   password: val.password,
+    // };
+    // userData = await AsyncStorage.getItem('user');
+
+    // const data = JSON.parse(userData);
+    // setData(data);
+
+    // await AsyncStorage.setItem('user', JSON.stringify(userData));
+    // setData([...setData, userData]);
+
     navigation.navigate('Home');
   };
 
   return (
     <Formik
       initialValues={{email: '', password: '', confirmPassword: ''}}
-      onSubmit={async value => {
-        const data = JSON.stringify(value);
-        await AsyncStorage.setItem('user', data);
-        sendUser();
+      onSubmit={value => {
+        sendUser(value);
       }}
       validationSchema={SignUpSchema}>
       {({
