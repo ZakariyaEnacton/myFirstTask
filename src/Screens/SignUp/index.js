@@ -33,13 +33,19 @@ const SignUp = ({navigation}) => {
   const [data, setData] = useState([]);
 
   const sendUser = async val => {
-    const dataValue = JSON.parse(await AsyncStorage.getItem('user'));
-    setData(dataValue);
+    const dataValue = await AsyncStorage.getItem('user');
+    const getData = JSON.parse(dataValue);
+
+    // getData.push(userData);
+    setData(getData);
+    console.log('dataVal----', getData);
+    setData([...dataValue, userData]);
 
     const userData = {
       email: val.email,
       password: val.password,
     };
+
     await AsyncStorage.setItem('user', JSON.stringify(userData));
 
     // setData([...existData, userData]);
