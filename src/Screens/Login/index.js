@@ -25,9 +25,15 @@ const loginScheema = Yup.object().shape({
 });
 
 const Login = ({navigation}) => {
+  const handleLogin = () => {
+    navigation.navigate('Home');
+  };
   return (
     <Formik
       initialValues={{email: '', password: ''}}
+      onSubmit={() => {
+        handleLogin();
+      }}
       validationSchema={loginScheema}>
       {({
         values,
@@ -82,7 +88,8 @@ const Login = ({navigation}) => {
           <View style={style.buttonWrapper}>
             <ButtonPrimary
               name={en.login}
-              onPress={() => navigation.navigate('Home')}
+              onPress={handleSubmit}
+              // disabled={!isValid}
             />
           </View>
           <View style={style.navViewWrapper}>

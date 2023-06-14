@@ -5,7 +5,10 @@ import style from './style';
 const ButtonPrimary = props => {
   return (
     <View>
-      <TouchableOpacity style={style.button} onPress={props.onPress}>
+      <TouchableOpacity
+        style={style.button}
+        onPress={props.onPress}
+        disabled={props.disabled}>
         <Text style={style.btnText}>{props.name}</Text>
       </TouchableOpacity>
     </View>
