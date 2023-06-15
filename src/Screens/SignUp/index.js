@@ -37,6 +37,7 @@ const SignUp = ({navigation}) => {
     const userData = {
       email: val.email,
       password: val.password,
+      token: 'true',
     };
 
     const addUser = [...parseData, userData];

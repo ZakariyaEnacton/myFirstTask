@@ -37,11 +37,7 @@ const Login = ({navigation}) => {
     );
 
     if (chkUser.length != []) {
-      const value = await AsyncStorage.setItem(
-        'user_token',
-        JSON.stringify(true),
-      );
-      console.log(value);
+      await AsyncStorage.setItem('user_token', 'true');
       navigation.navigate('Home');
     } else {
       console.warn('User not found');
