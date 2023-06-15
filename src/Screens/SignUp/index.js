@@ -37,11 +37,12 @@ const SignUp = ({navigation}) => {
     const userData = {
       email: val.email,
       password: val.password,
-      token: 'true',
     };
 
     const addUser = [...parseData, userData];
     await AsyncStorage.setItem('user', JSON.stringify(addUser));
+
+    await AsyncStorage.setItem('signUp_token', 'true');
 
     navigation.navigate('Home');
   };

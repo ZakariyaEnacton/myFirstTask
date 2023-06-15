@@ -12,13 +12,8 @@ const Splash = ({navigation}) => {
   });
 
   const checkUserToken = async () => {
-    const signUpUser = await AsyncStorage.getItem('user');
-    const signUpToken = JSON.parse(signUpUser);
-
-    const signUser = signUpToken.filter(item => item.token == 'true');
-    console.log(signUser);
-
     const loggedUser = await AsyncStorage.getItem('user_token');
+    const signUser = await AsyncStorage.getItem('signUp_token');
 
     if (loggedUser == 'true' || signUser == 'true') {
       setTimeout(() => {
