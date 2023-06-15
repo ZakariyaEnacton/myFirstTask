@@ -30,11 +30,17 @@ const Login = ({navigation}) => {
     const userData = await AsyncStorage.getItem('user');
     const getUserData = JSON.parse(userData);
 
-    getUserData.filter(items => {
-      if (val.email == items.email && items.password == val.password) {
-        navigation.navigate('Home');
-      }
-    });
+    let chkUser = [];
+
+    chkUser = getUserData.filter(
+      items => val.email == items.email && items.password == val.password,
+    );
+
+    if (chkUser.length != []) {
+      navigation.navigate('Home');
+    } else {
+      console.warn('User not found');
+    }
   };
   return (
     <Formik
