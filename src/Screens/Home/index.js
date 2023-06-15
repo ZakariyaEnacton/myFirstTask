@@ -1,20 +1,13 @@
-import {View, Text, Button} from 'react-native';
+import {View, Text, Dimensions} from 'react-native';
 import React from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
+const {height, width} = Dimensions.get('screen');
+
 const Home = () => {
-  const getData = async () => {
-    const data = JSON.parse(await AsyncStorage.getItem('user'));
-    console.log('data--->', data);
-  };
   return (
     <View>
-      <Button
-        title="get"
-        onPress={() => {
-          getData();
-        }}
-      />
+      <Text style={{alignSelf: 'center', top: 400}}>Home</Text>
     </View>
   );
 };
