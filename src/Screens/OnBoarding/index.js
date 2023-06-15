@@ -3,6 +3,7 @@ import React, {useRef, useState} from 'react';
 import {AppImages} from '../../Assets/Images';
 import SwiperFlatList from 'react-native-swiper-flatlist';
 import style from './style';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const slides = [
   {
@@ -31,13 +32,14 @@ const OnBoarding = ({navigation}) => {
   const [crrIndex, setCrrIndex] = useState(0);
   const refIndex = useRef(null);
 
-  const handleNextScroll = () => {
+  const handleNextScroll = async () => {
     if (crrIndex != slides.length - 1) {
       refIndex.current.scrollToIndex({
         index: crrIndex + 1,
         animated: true,
       });
     } else {
+      await AsyncStorage.setItem('onboard_token', 'true');
       navigation.navigate('Welcome');
     }
   };
