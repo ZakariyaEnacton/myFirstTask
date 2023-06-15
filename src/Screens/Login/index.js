@@ -31,12 +31,8 @@ const Login = ({navigation}) => {
     const getUserData = JSON.parse(userData);
 
     getUserData.filter(items => {
-      console.log('itemEmail-->', items);
-      console.log('valEmail-->', val);
       if (val.email == items.email && items.password == val.password) {
         navigation.navigate('Home');
-      } else {
-        console.warn('user not exist');
       }
     });
   };
