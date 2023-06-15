@@ -5,7 +5,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 const Home = () => {
   const getData = async () => {
     const data = JSON.parse(await AsyncStorage.getItem('user'));
-    console.log(data);
+    console.log('data--->', data);
   };
   return (
     <View>

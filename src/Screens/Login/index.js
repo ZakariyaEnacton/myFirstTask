@@ -10,6 +10,7 @@ import {Formik} from 'formik';
 import * as Yup from 'yup';
 import InputText from '../../Component/Core/InputText';
 import ButtonPrimary from '../../Component/Core/Button';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const loginScheema = Yup.object().shape({
   email: Yup.string(`- /\S+@\S+\. \S+/`)
@@ -25,14 +26,25 @@ const loginScheema = Yup.object().shape({
 });
 
 const Login = ({navigation}) => {
-  const handleLogin = () => {
-    navigation.navigate('Home');
+  const handleLogin = async val => {
+    const userData = await AsyncStorage.getItem('user');
+    const getUserData = JSON.parse(userData);
+
+    getUserData.filter(items => {
+      console.log('itemEmail-->', items);
+      console.log('valEmail-->', val);
+      if (val.email == items.email && items.password == val.password) {
+        navigation.navigate('Home');
+      } else {
+        console.warn('user not exist');
+      }
+    });
   };
   return (
     <Formik
       initialValues={{email: '', password: ''}}
-      onSubmit={() => {
-        handleLogin();
+      onSubmit={value => {
+        handleLogin(value);
       }}
       validationSchema={loginScheema}>
       {({

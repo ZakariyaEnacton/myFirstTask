@@ -30,39 +30,17 @@ const SignUpSchema = Yup.object().shape({
 });
 
 const SignUp = ({navigation}) => {
-  const [data, setData] = useState([]);
-
   const sendUser = async val => {
-    const dataValue = await AsyncStorage.getItem('user');
-    const getData = JSON.parse(dataValue);
-
-    // getData.push(userData);
-    setData(getData);
-    console.log('dataVal----', getData);
-    setData([...dataValue, userData]);
+    const existingData = await AsyncStorage.getItem('user');
+    const parseData = existingData != null ? JSON.parse(existingData) : [];
 
     const userData = {
       email: val.email,
       password: val.password,
     };
 
-    await AsyncStorage.setItem('user', JSON.stringify(userData));
-
-    // setData([...existData, userData]);
-
-    // setData(prevData => [...prevData, userData]);
-
-    // const userData = {
-    //   email: val.email,
-    //   password: val.password,
-    // };
-    // userData = await AsyncStorage.getItem('user');
-
-    // const data = JSON.parse(userData);
-    // setData(data);
-
-    // await AsyncStorage.setItem('user', JSON.stringify(userData));
-    // setData([...setData, userData]);
+    const addUser = [...parseData, userData];
+    await AsyncStorage.setItem('user', JSON.stringify(addUser));
 
     navigation.navigate('Home');
   };
