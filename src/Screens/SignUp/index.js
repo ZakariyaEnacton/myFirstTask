@@ -1,5 +1,5 @@
 import {View, Text, TouchableOpacity, StatusBar} from 'react-native';
-import React, {useState} from 'react';
+import React from 'react';
 import en from '../../translations/en.json';
 import signupStyle from './style';
 import style from './style';

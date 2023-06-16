@@ -1,5 +1,5 @@
-import {View, Text, StatusBar, Image} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import {StatusBar, Image} from 'react-native';
+import React, {useEffect} from 'react';
 import LinearGradient from 'react-native-linear-gradient';
 import splashStyle from '../../Screens/Splash/style';
 import {Colors} from '../../Assets/Theme/colors';
