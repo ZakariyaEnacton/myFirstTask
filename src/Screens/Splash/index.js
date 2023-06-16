@@ -33,16 +33,6 @@ const Splash = ({navigation}) => {
         navigation.navigate('onBoarding');
       }, 2000);
     }
-
-    if (loggedUser == 'true' || signUser == 'true') {
-      setTimeout(() => {
-        navigation.navigate('Home');
-      }, 2000);
-    } else {
-      setTimeout(() => {
-        navigation.navigate('OnBoarding');
-      }, 2000);
-    }
   };
 
   return (
