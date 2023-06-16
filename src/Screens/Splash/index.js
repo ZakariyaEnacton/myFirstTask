@@ -17,19 +17,29 @@ const Splash = ({navigation}) => {
     const onBoard = await AsyncStorage.getItem('onboard_token');
     console.log(onBoard);
 
-    if (onBoard == 'true') {
-      setTimeout(() => {
-        navigation.navigate('Welcome');
-      }, 2000);
-    } else if (loggedUser == 'true' || signUser == 'true') {
+    if (loggedUser == 'true' || signUser == 'true') {
       setTimeout(() => {
         navigation.navigate('Home');
       }, 2000);
+    } else if (onBoard == 'true') {
+      setTimeout(() => {
+        navigation.navigate('Welcome');
+      }, 2000);
     } else {
       setTimeout(() => {
-        navigation.navigate('OnBoarding');
+        navigation.navigate('onBoarding');
       }, 2000);
     }
+
+    // if (loggedUser == 'true' || signUser == 'true') {
+    //   setTimeout(() => {
+    //     navigation.navigate('Home');
+    //   }, 2000);
+    // } else {
+    //   setTimeout(() => {
+    //     navigation.navigate('OnBoarding');
+    //   }, 2000);
+    // }
   };
 
   return (
