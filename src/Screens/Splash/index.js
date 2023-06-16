@@ -8,42 +8,42 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
-    setTimeout(() => {
-      navigation.navigate('onBoarding');
-    }, 2000);
-    // checkUserToken();
+    // setTimeout(() => {
+    //   navigation.navigate('onBoarding');
+    // }, 2000);
+    checkUserToken();
   });
 
-  // const checkUserToken = async () => {
-  //   const loggedUser = await AsyncStorage.getItem('user_token');
-  //   const signUser = await AsyncStorage.getItem('signUp_token');
-  //   const onBoard = await AsyncStorage.getItem('onboard_token');
-  //   console.log(onBoard);
+  const checkUserToken = async () => {
+    const loggedUser = await AsyncStorage.getItem('user_token');
+    const signUser = await AsyncStorage.getItem('signUp_token');
+    const onBoard = await AsyncStorage.getItem('onboard_token');
+    console.log(onBoard);
 
-  //   if (loggedUser == 'true' || signUser == 'true') {
-  //     setTimeout(() => {
-  //       navigation.navigate('Home');
-  //     }, 2000);
-  //   } else if (onBoard == 'true') {
-  //     setTimeout(() => {
-  //       navigation.navigate('Welcome');
-  //     }, 2000);
-  //   } else {
-  //     setTimeout(() => {
-  //       navigation.navigate('onBoarding');
-  //     }, 2000);
-  // }
+    if (loggedUser == 'true' || signUser == 'true') {
+      setTimeout(() => {
+        navigation.navigate('Home');
+      }, 2000);
+    } else if (onBoard == 'true') {
+      setTimeout(() => {
+        navigation.navigate('Welcome');
+      }, 2000);
+    } else {
+      setTimeout(() => {
+        navigation.navigate('onBoarding');
+      }, 2000);
+    }
 
-  // if (loggedUser == 'true' || signUser == 'true') {
-  //   setTimeout(() => {
-  //     navigation.navigate('Home');
-  //   }, 2000);
-  // } else {
-  //   setTimeout(() => {
-  //     navigation.navigate('OnBoarding');
-  //   }, 2000);
-  // }
-  // };
+    if (loggedUser == 'true' || signUser == 'true') {
+      setTimeout(() => {
+        navigation.navigate('Home');
+      }, 2000);
+    } else {
+      setTimeout(() => {
+        navigation.navigate('OnBoarding');
+      }, 2000);
+    }
+  };
 
   return (
     <LinearGradient style={splashStyle.container} colors={Colors.splashColor}>
