@@ -30,7 +30,7 @@ const Splash = ({navigation}) => {
       }, 2000);
     } else {
       setTimeout(() => {
-        navigation.navigate('onBoarding');
+        navigation.navigate('OnBoarding');
       }, 2000);
     }
   };

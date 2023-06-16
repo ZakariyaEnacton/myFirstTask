@@ -99,6 +99,7 @@ const SignUp = ({navigation}) => {
                   value={values.password}
                   onChangeText={handleChange('password')}
                   onBlur={() => setFieldTouched('password')}
+                  secureTextEntry={true}
                 />
                 {touched.password && errors.password && (
                   <Text style={style.errorTxt}>{errors.password}</Text>
@@ -113,6 +114,7 @@ const SignUp = ({navigation}) => {
                   value={values.confirmPassword}
                   onChangeText={handleChange('confirmPassword')}
                   onBlur={() => setFieldTouched('confirmPassword')}
+                  secureTextEntry={true}
                 />
                 {touched.confirmPassword && errors.confirmPassword && (
                   <Text style={style.errorTxt}>{errors.confirmPassword}</Text>
