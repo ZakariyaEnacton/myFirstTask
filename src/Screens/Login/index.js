@@ -32,11 +32,13 @@ const Login = ({navigation}) => {
 
     let chkUser = [];
 
-    chkUser = getUserData.filter(
-      items => val.email == items.email && items.password == val.password,
-    );
+    if (getUserData != null) {
+      chkUser = getUserData.filter(
+        items => val.email == items.email && items.password == val.password,
+      );
+    }
 
-    if (chkUser.length != []) {
+    if (chkUser.length > 0) {
       await AsyncStorage.setItem('user_token', 'true');
       navigation.navigate('Home');
     } else {

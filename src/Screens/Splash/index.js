@@ -21,23 +21,17 @@ const Splash = ({navigation}) => {
     console.log(onBoard);
 
     if (loggedUser == 'true' || signUser == 'true') {
-      setTimeout(() => {
-        navigation.navigate('Home');
-      }, 2000);
+      navigation.navigate('Home');
     } else if (onBoard == 'true') {
-      setTimeout(() => {
-        navigation.navigate('Welcome');
-      }, 2000);
+      navigation.navigate('Welcome');
     } else {
-      setTimeout(() => {
-        navigation.navigate('OnBoarding');
-      }, 2000);
+      navigation.navigate('OnBoarding');
     }
   };
 
   return (
     <LinearGradient style={splashStyle.container} colors={Colors.splashColor}>
-      <StatusBar hidden={true} barStyle="light-content" />
+      <StatusBar hidden={true} />
       <Image style={{height: 100, width: 100}} source={AppImages.appLogo} />
     </LinearGradient>
   );
