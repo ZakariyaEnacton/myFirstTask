@@ -21,7 +21,7 @@ export default signupStyle = StyleSheet.create({
   },
   titleStart: {
     ...fontStyle.headingRegular,
-    fontWeight: 300,
+    fontWeight: '300',
     color: Colors.white,
   },
   inputWrapper: {
@@ -88,12 +88,12 @@ export default signupStyle = StyleSheet.create({
   },
   navLinkTxt: {
     color: Colors.white,
-    fontWeight: 300,
+    fontWeight: '300',
   },
   navLinkBtn: {
     textDecorationLine: 'underline',
     color: Colors.white,
-    fontWeight: 500,
+    fontWeight: '500',
   },
   errorTxt: {
     color: '#000',
