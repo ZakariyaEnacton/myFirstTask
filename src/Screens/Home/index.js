@@ -17,7 +17,7 @@ const Home = props => {
   useEffect(() => {
     dispatch(request_all_data());
   }, []);
-  console.log('in component -- >', props.dataList);
+  console.log('in component -- >', props);
 
   const removeToken = async () => {
     await AsyncStorage.getItem('user_token');
