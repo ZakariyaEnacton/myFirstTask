@@ -1,5 +1,5 @@
 import {put, takeEvery} from 'redux-saga/effects';
-import {DATA_LIST, SET_USER_LIST, REQUEST_ALL_DATA} from '../constant';
+import {REQUEST_ALL_DATA} from '../constant';
 import {successAllData} from '../action';
 
 function* homeSagaData() {

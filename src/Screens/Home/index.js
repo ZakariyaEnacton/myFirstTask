@@ -2,7 +2,7 @@ import {View, Text, Dimensions, TouchableOpacity} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {request_all_data} from '../../redux/action';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
 
 const mapStateToProps = ({reducer}) => {
