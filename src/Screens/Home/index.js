@@ -1,10 +1,24 @@
 import {View, Text, Dimensions, TouchableOpacity} from 'react-native';
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
+import {request_all_data} from '../../redux/action';
+import {useDispatch, useSelector} from 'react-redux';
+import {connect} from 'react-redux';
 
-const {height, width} = Dimensions.get('screen');
+const mapStateToProps = ({reducer}) => {
+  return {
+    dataList: reducer.stores,
+  };
+};
+const Home = props => {
+  const dispatch = useDispatch();
+  // const props.dataList = useSelector(state => state.stores);
 
-const Home = ({navigation}) => {
+  useEffect(() => {
+    dispatch(request_all_data());
+  }, []);
+  console.log('in component -- >', props.dataList);
+
   const removeToken = async () => {
     await AsyncStorage.getItem('user_token');
     await AsyncStorage.getItem('signUp_token');
@@ -12,6 +26,9 @@ const Home = ({navigation}) => {
   };
   return (
     <View>
+      {props.dataList?.length
+        ? props.dataList.map(items => <Text>{console.log(items)}</Text>)
+        : null}
       <View>
         <Text style={{alignSelf: 'center', top: 400}}>Home</Text>
       </View>
@@ -19,7 +36,7 @@ const Home = ({navigation}) => {
         <TouchableOpacity
           onPress={() => {
             removeToken();
-            navigation.navigate('Welcome');
+            props.navigation.navigate('Welcome');
           }}>
           <Text style={{alignSelf: 'center', top: 410}}>LogOut</Text>
         </TouchableOpacity>
@@ -28,4 +45,4 @@ const Home = ({navigation}) => {
   );
 };
 
-export default Home;
+export default connect(mapStateToProps, {})(Home);
