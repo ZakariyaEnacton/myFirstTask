@@ -8,9 +8,6 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 const Splash = ({navigation}) => {
   useEffect(() => {
-    // setTimeout(() => {
-    //   navigation.navigate('onBoarding');
-    // }, 2000);
     checkUserToken();
   });
 

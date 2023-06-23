@@ -45,7 +45,7 @@ export default style = StyleSheet.create({
   },
   btnText: {
     ...fontStyle.h2Ragular,
-    fontWeight: 500,
+    fontWeight: '500',
   },
   txtWrapper: {
     position: 'absolute',

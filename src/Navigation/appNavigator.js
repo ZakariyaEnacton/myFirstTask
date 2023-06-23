@@ -1,4 +1,3 @@
-import {View, Text} from 'react-native';
 import React from 'react';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
@@ -7,13 +6,46 @@ import Splash from '../Screens/Splash';
 import SignUp from '../Screens/SignUp';
 import Login from '../Screens/Login';
 import RNBootSplash from 'react-native-bootsplash';
-import Home from '../Screens/Home';
 import OnBoarding from '../Screens/OnBoarding';
 import BottomNav from './BottomNavigator';
+import OneSignal from 'react-native-onesignal';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+
+const oneSignalNotification = async () => {
+  const userData = await AsyncStorage.getItem('user');
+  const getData = JSON.parse(userData);
+  // console.log('ud -- >', getData.email);
+
+  const ONESIGNAL_APP_ID = '5d061e91-0d9d-4b2c-baac-e5ca8d152254';
+
+  OneSignal.setAppId(ONESIGNAL_APP_ID);
+
+  OneSignal.promptForPushNotificationsWithUserResponse();
+
+  OneSignal.setNotificationWillShowInForegroundHandler(
+    notificationReceivedEvent => {
+      console.log(
+        'OneSignal: notification will show in foreground:',
+        notificationReceivedEvent,
+      );
+      let notification = notificationReceivedEvent.getNotification();
+      console.log('notification: ', notification);
+      const data = notification.additionalData;
+      console.log('additionalData: ', data);
+
+      notificationReceivedEvent.complete(notification);
+    },
+  );
+
+  OneSignal.setNotificationOpenedHandler(notification => {
+    console.log('OneSignal: notification opened:', notification);
+  });
+};
 
 const Stack = createNativeStackNavigator();
 
 const AppNavigator = () => {
+  oneSignalNotification();
   return (
     <NavigationContainer onReady={() => RNBootSplash.hide()}>
       <Stack.Navigator
