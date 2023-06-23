@@ -5,9 +5,9 @@ import {request_all_data} from '../../redux/action';
 import {useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
 
-const mapStateToProps = ({reducer}) => {
+const mapStateToProps = ({reducerImp}) => {
   return {
-    dataList: reducer.stores,
+    dataList: reducerImp.stores,
   };
 };
 const Home = props => {
@@ -17,7 +17,7 @@ const Home = props => {
   useEffect(() => {
     dispatch(request_all_data());
   }, []);
-  console.log('in component -- >', props);
+  console.log('in component -- >', props.dataList);
 
   const removeToken = async () => {
     await AsyncStorage.getItem('user_token');
