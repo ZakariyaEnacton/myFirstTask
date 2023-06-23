@@ -139,7 +139,7 @@ const SignUp = ({navigation}) => {
               <View style={style.horizontalView} />
             </View>
             <View>
-              <MediaButton />
+              <MediaButton navigation={navigation} />
             </View>
           </View>
           <View style={style.navLinkTxtWrapper}>

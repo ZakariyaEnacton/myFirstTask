@@ -69,7 +69,7 @@ const Login = ({navigation}) => {
             <Text
               style={[
                 style.headTxt,
-                {...fontStyle.headingRegular28, fontWeight: 300},
+                {...fontStyle.headingRegular28, fontWeight: '300'},
               ]}>
               {en.greeting}
             </Text>
@@ -119,7 +119,7 @@ const Login = ({navigation}) => {
             </View>
             <View style={style.horizontalView} />
           </View>
-          <MediaButton />
+          <MediaButton navigation={navigation} />
           <View style={style.navLinkTxtWrapper}>
             <View>
               <Text style={style.navLinkTxt}>{en.navLinkTxt}</Text>

@@ -29,7 +29,7 @@ const Welcome = ({navigation}) => {
             onPress={() => navigation.navigate('SignUp')}
             style={[style.button, style.btnSignUp]}>
             <Text
-              style={[style.btnText, {color: Colors.white, fontWeight: 400}]}>
+              style={[style.btnText, {color: Colors.white, fontWeight: '400'}]}>
               {en.sign_up}
             </Text>
           </TouchableOpacity>

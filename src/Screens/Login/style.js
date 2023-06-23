@@ -70,12 +70,12 @@ export default style = StyleSheet.create({
   },
   navLinkTxt: {
     color: Colors.white,
-    fontWeight: 300,
+    fontWeight: '300',
   },
   navLinkBtn: {
     textDecorationLine: 'underline',
     color: Colors.white,
-    fontWeight: 500,
+    fontWeight: '500',
   },
   errorTxt: {
     color: '#000',

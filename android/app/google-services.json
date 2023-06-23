@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "667299390762",
+    "project_id": "myfirsttask-be570",
+    "storage_bucket": "myfirsttask-be570.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:667299390762:android:828a43e4a910c2b6572a53",
+        "android_client_info": {
+          "package_name": "com.myfirsttask"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "667299390762-tb6ga3rfe148tabtpif2lvop7l56lihl.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.myfirsttask",
+            "certificate_hash": "1fc16dc2cdf771d42bf739e582b8c9100c3d247b"
+          }
+        },
+        {
+          "client_id": "667299390762-2ubnmt2ruskk3b6t379t2tq1kcfc2i5d.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAShW-ss0s--RJZZnLu-cu1RVNR_k9nqCI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "667299390762-2ubnmt2ruskk3b6t379t2tq1kcfc2i5d.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
