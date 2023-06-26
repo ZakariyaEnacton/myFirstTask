@@ -10,14 +10,11 @@ function* homeSagaData() {
 function* getDataList() {
   const url = 'https://lbp8api.enactweb.com/public/apphome';
   let data = yield fetch(url);
-  console.log('data -- >', data);
-  if (Response.ok === 'true') {
-    console.log('true');
+  if (data.ok == true) {
+    let dataJson = yield data.json();
+    yield put(successAllData(dataJson.data));
   } else {
-    console.log('false');
+    yield put(failedAllData());
   }
-  data = yield data.json();
-  // console.log('Saga Function called -- >', data);
-  yield put(successAllData(data.data));
 }
 export default homeSagaData;

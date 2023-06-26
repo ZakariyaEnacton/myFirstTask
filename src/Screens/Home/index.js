@@ -25,8 +25,8 @@ const Home = props => {
   };
   return (
     <View>
-      {/* {props.dataList?.length
-        ? props.dataList.map(items => {
+      {/* {props.dataList
+        ? props.dataList?.map(items => {
             console.log('item -- >', items);
           })
         : null} */}
