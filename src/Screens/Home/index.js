@@ -1,4 +1,4 @@
-import {View, Text, Dimensions, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity} from 'react-native';
 import React, {useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {request_all_data} from '../../redux/action';
@@ -7,7 +7,7 @@ import {connect} from 'react-redux';
 
 const mapStateToProps = ({reducerImp}) => {
   return {
-    dataList: reducerImp.stores,
+    dataList: reducerImp,
   };
 };
 const Home = props => {
@@ -18,7 +18,6 @@ const Home = props => {
     dispatch(request_all_data());
   }, []);
   console.log('in component -- >', props.dataList);
-
   const removeToken = async () => {
     await AsyncStorage.getItem('user_token');
     await AsyncStorage.getItem('signUp_token');
@@ -26,9 +25,11 @@ const Home = props => {
   };
   return (
     <View>
-      {props.dataList?.length
-        ? props.dataList.map(items => <Text>{console.log(items)}</Text>)
-        : null}
+      {/* {props.dataList?.length
+        ? props.dataList.map(items => {
+            console.log('item -- >', items);
+          })
+        : null} */}
       <View>
         <Text style={{alignSelf: 'center', top: 400}}>Home</Text>
       </View>

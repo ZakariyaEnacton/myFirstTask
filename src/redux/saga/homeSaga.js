@@ -11,7 +11,7 @@ function* getDataList() {
   const url = 'https://lbp8api.enactweb.com/public/apphome';
   let data = yield fetch(url);
   data = yield data.json();
-  //   console.log('Saga Function called -- >', data);
+  // console.log('Saga Function called -- >', data);
   yield put(successAllData(data));
 }
 export default homeSagaData;
