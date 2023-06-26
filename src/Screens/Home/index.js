@@ -1,5 +1,5 @@
-import {View, Text, TouchableOpacity} from 'react-native';
-import React, {useEffect, useState} from 'react';
+import {View, Text, TouchableOpacity, FlatList} from 'react-native';
+import React, {useEffect} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {request_all_data} from '../../redux/action';
 import {useDispatch} from 'react-redux';
@@ -27,9 +27,17 @@ const Home = props => {
   };
   return (
     <View>
-      <View>
+      <FlatList
+        data={list}
+        renderItem={({item}) => (
+          <View>
+            <Text>{item.procash / slider}</Text>
+          </View>
+        )}
+      />
+      {/* <View>
         <Text style={{alignSelf: 'center', top: 400}}>Home</Text>
-      </View>
+  </View>*/}
       <View>
         <TouchableOpacity
           onPress={() => {
