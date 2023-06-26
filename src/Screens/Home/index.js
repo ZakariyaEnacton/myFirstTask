@@ -17,7 +17,9 @@ const Home = props => {
   useEffect(() => {
     dispatch(request_all_data());
   }, []);
-  console.log('in component -- >', props.dataList);
+
+  let list = props.dataList;
+
   const removeToken = async () => {
     await AsyncStorage.getItem('user_token');
     await AsyncStorage.getItem('signUp_token');
@@ -25,11 +27,6 @@ const Home = props => {
   };
   return (
     <View>
-      {/* {props.dataList
-        ? props.dataList?.map(items => {
-            console.log('item -- >', items);
-          })
-        : null} */}
       <View>
         <Text style={{alignSelf: 'center', top: 400}}>Home</Text>
       </View>
