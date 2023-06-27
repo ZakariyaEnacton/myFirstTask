@@ -4,6 +4,9 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import {request_all_data} from '../../redux/action';
 import {useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
+import CarouselView from '../../Component/Generic/Carousel';
+import {Colors} from '../../Assets/Theme/colors';
+import {style} from './style';
 
 const mapStateToProps = ({reducerImp}) => {
   return {
@@ -12,13 +15,17 @@ const mapStateToProps = ({reducerImp}) => {
 };
 const Home = props => {
   const dispatch = useDispatch();
-  // const props.dataList = useSelector(state => state.stores);
 
   useEffect(() => {
     dispatch(request_all_data());
   }, []);
 
-  let list = props.dataList;
+  let list = Object.values(props.dataList);
+  console.log('list -- >', list);
+
+  let listData = list.filter(item => item);
+
+  console.log('listData -- >', listData);
 
   const removeToken = async () => {
     await AsyncStorage.getItem('user_token');
@@ -27,17 +34,20 @@ const Home = props => {
   };
   return (
     <View>
-      <FlatList
-        data={list}
-        renderItem={({item}) => (
-          <View>
-            <Text>{item.procash / slider}</Text>
-          </View>
-        )}
+      <CarouselView
+        data={listData}
+        renderItem={({item}) => {
+          switch (item) {
+            case item['procash/slider']:
+              return <Text>Hello</Text>;
+          }
+        }}
+        itemWidth={350}
+        sliderWidth={400}
       />
-      {/* <View>
+      <View>
         <Text style={{alignSelf: 'center', top: 400}}>Home</Text>
-  </View>*/}
+      </View>
       <View>
         <TouchableOpacity
           onPress={() => {
