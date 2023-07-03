@@ -23,30 +23,32 @@ const Home = props => {
   let list = Object.values(props.dataList);
   console.log('list -- >', list);
 
-  let listData = list.filter(item => item);
-
-  console.log('listData -- >', listData);
-
   const removeToken = async () => {
     await AsyncStorage.getItem('user_token');
     await AsyncStorage.getItem('signUp_token');
     await AsyncStorage.multiRemove(['user_token', 'signUp_token']);
   };
+
   return (
     <View>
-      <CarouselView
-        data={listData}
-        renderItem={({item}) => {
-          switch (item) {
-            case item['procash/slider']:
-              return <Text>Hello</Text>;
-          }
-        }}
-        itemWidth={350}
-        sliderWidth={400}
-      />
+      <View style={style.flatList}>
+        <FlatList
+          data={list}
+          renderItem={({item}) => {
+            console.log(item['procash/slider']);
+            switch (item['procash/slider']) {
+              case item['procash/slider']:
+                console.log(item['procash/slider'.style]);
+                break;
+              default:
+                return null;
+            }
+          }}
+        />
+      </View>
+
       <View>
-        <Text style={{alignSelf: 'center', top: 400}}>Home</Text>
+        <Text style={{marginLeft: 10}}>Home</Text>
       </View>
       <View>
         <TouchableOpacity
@@ -54,7 +56,7 @@ const Home = props => {
             removeToken();
             props.navigation.navigate('Welcome');
           }}>
-          <Text style={{alignSelf: 'center', top: 410}}>LogOut</Text>
+          <Text style={{marginLeft: 8}}>LogOut</Text>
         </TouchableOpacity>
       </View>
     </View>
