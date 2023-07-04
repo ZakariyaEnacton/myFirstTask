@@ -3,7 +3,6 @@ import React from 'react';
 import {Carousel} from 'react-native-snap-carousel';
 
 const CarouselView = props => {
-  console.log('props --- >>>', props);
   return (
     <View>
       <Carousel {...props} />

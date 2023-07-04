@@ -11,15 +11,19 @@ export const style = StyleSheet.create({
     textAlign: 'center',
   },
   text: {
-    marginTop: 20,
-    backgroundColor: Colors.black,
-    color: Colors.white,
     textAlign: 'center',
-    height: 120,
   },
   flatList: {
     backgroundColor: Colors.red,
-    flex: 1,
     marginTop: StatusBar.currentHeight || 0,
+  },
+  view: {
+    backgroundColor: Colors.lightViolet,
+    margin: 2,
+    height: 50,
+  },
+  imgView: {
+    height: 150,
+    margin: 10,
   },
 });
