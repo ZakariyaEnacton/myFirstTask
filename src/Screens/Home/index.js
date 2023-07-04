@@ -6,6 +6,7 @@ import {useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
 import CarouselView from '../../Component/Generic/Carousel';
 import {style} from './style';
+import Card from '../../Component/Generic/Card';
 
 const mapStateToProps = ({reducerImp}) => {
   return {
@@ -63,9 +64,15 @@ const Home = props => {
                 );
               case 'procash/featured-stores':
                 return (
-                  <View style={style.view}>
-                    <Text style={style.text}>procash / featured-stores</Text>
-                  </View>
+                  <Card
+                    data={item['procash/featured-stores'].categories}
+                    renderItem={({item}) => {
+                      console.log('item ---- >>>>', item);
+                    }}
+                  />
+                  // <View style={style.view}>
+                  //   <Text style={style.text}>procash / featured-stores</Text>
+                  // </View>
                 );
               case 'procash/top-stores':
                 return (
