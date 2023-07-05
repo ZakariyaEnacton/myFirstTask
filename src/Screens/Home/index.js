@@ -75,12 +75,16 @@ const Home = props => {
                         horizontal={true}
                         data={item['procash/featured-stores'].categories}
                         renderItem={({item}) => {
+                          // console.log('object == ', item);
+                          console.log('object[0] == >>', item.stores[3]);
                           return (
                             <View style={{justifyContent: 'center'}}>
                               <TouchableOpacity
-                                onPress={() => {
-                                  <Text>{item.name}</Text>;
-                                }}>
+                                onPress={() => (
+                                  <View style={{height: 100}}>
+                                    <Text>Hello</Text>
+                                  </View>
+                                )}>
                                 <Text
                                   style={{
                                     width: 110,
