@@ -7,6 +7,7 @@ import {connect} from 'react-redux';
 import CarouselView from '../../Component/Generic/Carousel';
 import {style} from './style';
 import Card from '../../Component/Generic/Card';
+import {Colors} from 'react-native/Libraries/NewAppScreen';
 
 const mapStateToProps = ({reducerImp}) => {
   return {
@@ -35,7 +36,6 @@ const Home = props => {
           data={list}
           renderItem={({item}) => {
             const objData = Object.values(item);
-
             switch (objData[0].blockName) {
               case 'procash/section':
                 return (
@@ -52,44 +52,213 @@ const Home = props => {
                     itemWidth={350}
                     renderItem={({item}) => {
                       return (
-                        <Image
-                          source={{
-                            uri: item.image_url.en,
-                          }}
-                          style={style.imgView}
-                        />
+                        <View>
+                          <Image
+                            source={{
+                              uri: item.image_url.en,
+                            }}
+                            style={style.imgView}
+                          />
+                        </View>
                       );
                     }}
                   />
                 );
               case 'procash/featured-stores':
                 return (
-                  <Card
-                    data={item['procash/featured-stores'].categories}
-                    renderItem={({item}) => {
-                      console.log('item ---- >>>>', item);
-                    }}
-                  />
-                  // <View style={style.view}>
-                  //   <Text style={style.text}>procash / featured-stores</Text>
-                  // </View>
+                  <View style={{flex: 1, flexDirection: 'row'}}>
+                    <Text style={{textAlign: 'center', width: '30%'}}>
+                      Top featured-stores
+                    </Text>
+                    <View style={{width: '70%'}}>
+                      <FlatList
+                        horizontal={true}
+                        data={item['procash/featured-stores'].categories}
+                        renderItem={({item}) => {
+                          return (
+                            <View style={{justifyContent: 'center'}}>
+                              <TouchableOpacity
+                                onPress={() => {
+                                  <Text>{item.name}</Text>;
+                                }}>
+                                <Text
+                                  style={{
+                                    width: 110,
+                                    textAlign: 'center',
+                                    justifyContent: 'center',
+                                  }}>
+                                  {item.name}
+                                </Text>
+                              </TouchableOpacity>
+                            </View>
+                          );
+                        }}
+                      />
+                    </View>
+                  </View>
                 );
               case 'procash/top-stores':
                 return (
-                  <View style={style.view}>
-                    <Text style={style.text}>procash/top-stores</Text>
+                  <View
+                    style={{
+                      flex: 1,
+                      flexDirection: 'row',
+                    }}>
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        width: '30%',
+                        justifyContent: 'center',
+                      }}>
+                      Top Stores
+                    </Text>
+                    <View style={{width: '70%'}}>
+                      <FlatList
+                        horizontal={true}
+                        data={item['procash/top-stores'].categories}
+                        renderItem={({item}) => {
+                          return (
+                            <View style={{justifyContent: 'center'}}>
+                              <TouchableOpacity
+                                onPress={() => {
+                                  console.log(item.name);
+                                }}>
+                                <Text
+                                  style={{
+                                    width: 110,
+                                    textAlign: 'center',
+                                  }}>
+                                  {item.name}
+                                </Text>
+                              </TouchableOpacity>
+                            </View>
+                          );
+                        }}
+                      />
+                    </View>
                   </View>
                 );
               case 'procash/top-offers':
                 return (
-                  <View style={style.view}>
-                    <Text style={style.text}>procash/top-offers</Text>
+                  <View
+                    style={{
+                      flex: 1,
+                      flexDirection: 'row',
+                    }}>
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        width: '30%',
+                        justifyContent: 'center',
+                      }}>
+                      Top offers
+                    </Text>
+                    <View style={{width: '70%'}}>
+                      <FlatList
+                        horizontal={true}
+                        data={item['procash/top-offers'].categories}
+                        renderItem={({item}) => {
+                          return (
+                            <View style={{justifyContent: 'center'}}>
+                              <TouchableOpacity
+                                onPress={() => {
+                                  console.log(item.name);
+                                }}>
+                                <Text
+                                  style={{
+                                    width: 110,
+                                    textAlign: 'center',
+                                  }}>
+                                  {item.name}
+                                </Text>
+                              </TouchableOpacity>
+                            </View>
+                          );
+                        }}
+                      />
+                    </View>
                   </View>
                 );
               case 'procash/top-deals':
                 return (
-                  <View style={style.view}>
-                    <Text style={style.text}>procash/top-deals</Text>
+                  <View
+                    style={{
+                      flex: 1,
+                      flexDirection: 'row',
+                    }}>
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        width: '30%',
+                        justifyContent: 'center',
+                      }}>
+                      Top deals
+                    </Text>
+                    <View style={{width: '70%'}}>
+                      <FlatList
+                        horizontal={true}
+                        data={item['procash/top-deals'].categories}
+                        renderItem={({item}) => {
+                          return (
+                            <View style={{justifyContent: 'center'}}>
+                              <TouchableOpacity
+                                onPress={() => {
+                                  console.log(item.name);
+                                }}>
+                                <Text
+                                  style={{
+                                    width: 110,
+                                    textAlign: 'center',
+                                  }}>
+                                  {item.name}
+                                </Text>
+                              </TouchableOpacity>
+                            </View>
+                          );
+                        }}
+                      />
+                    </View>
+                  </View>
+                );
+              case 'procash/categories':
+                return (
+                  <View
+                    style={{
+                      flex: 1,
+                      flexDirection: 'row',
+                    }}>
+                    <Text
+                      style={{
+                        textAlign: 'center',
+                        width: '30%',
+                        justifyContent: 'center',
+                      }}>
+                      procash/categories
+                    </Text>
+                    <View style={{width: '70%'}}>
+                      <FlatList
+                        horizontal={true}
+                        data={item['procash/categories'].categories}
+                        renderItem={({item}) => {
+                          return (
+                            <View style={{justifyContent: 'center'}}>
+                              <TouchableOpacity
+                                onPress={() => {
+                                  console.log(item.name);
+                                }}>
+                                <Text
+                                  style={{
+                                    width: 110,
+                                    textAlign: 'center',
+                                  }}>
+                                  {item.name}
+                                </Text>
+                              </TouchableOpacity>
+                            </View>
+                          );
+                        }}
+                      />
+                    </View>
                   </View>
                 );
               default:
@@ -98,10 +267,6 @@ const Home = props => {
             }
           }}
         />
-      </View>
-
-      <View>
-        <Text style={{marginLeft: 10}}>Home</Text>
       </View>
       <View>
         <TouchableOpacity

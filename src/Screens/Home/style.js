@@ -14,7 +14,6 @@ export const style = StyleSheet.create({
     textAlign: 'center',
   },
   flatList: {
-    backgroundColor: Colors.red,
     marginTop: StatusBar.currentHeight || 0,
   },
   view: {
