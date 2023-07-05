@@ -1,18 +1,25 @@
-import {View, Text} from 'react-native';
+import {View, Text, FlatList} from 'react-native';
 import React from 'react';
 
 const Card = props => {
-  console.log('props  --- >>> ', props);
+  let data = Object.values(props);
+  console.log('props  --- >>> ', data);
+
   return (
     <View>
       <View
         style={{
-          backgroundColor: '#FDF4E6',
+          backgroundColor: 'lightblue',
           height: 110,
           width: 150,
           borderRadius: 10,
         }}>
-        <Text>Hello</Text>
+        <FlatList
+          data={props}
+          renderItem={({item}) => {
+            return <Text>{item}</Text>;
+          }}
+        />
       </View>
     </View>
   );

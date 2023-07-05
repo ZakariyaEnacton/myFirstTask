@@ -15,6 +15,7 @@ export const style = StyleSheet.create({
   },
   flatList: {
     marginTop: StatusBar.currentHeight || 0,
+    height: '95%',
   },
   view: {
     backgroundColor: Colors.lightViolet,
@@ -25,4 +26,7 @@ export const style = StyleSheet.create({
     height: 150,
     margin: 10,
   },
+  // lgBtn: {
+  //   height: '4%',
+  // },
 });
