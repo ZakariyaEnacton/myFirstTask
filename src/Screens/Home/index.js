@@ -6,7 +6,6 @@ import {useDispatch} from 'react-redux';
 import {connect} from 'react-redux';
 import CarouselView from '../../Component/Generic/Carousel';
 import {style} from './style';
-import {Colors} from 'react-native/Libraries/NewAppScreen';
 import Card from '../../Component/Generic/Card';
 
 const mapStateToProps = ({reducerImp}) => {
@@ -63,6 +62,7 @@ const Home = props => {
                       return (
                         <View>
                           <Image
+                            resizeMode="contain"
                             source={{
                               uri: item.image_url.en,
                             }}
