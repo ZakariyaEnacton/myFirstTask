@@ -1,5 +1,5 @@
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
-import React, {useEffect} from 'react';
+import React, {useEffect, useState} from 'react';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import {request_all_data} from '../../redux/action';
 import {useDispatch} from 'react-redux';
@@ -85,6 +85,7 @@ const Home = props => {
                           horizontal={true}
                           data={item['procash/featured-stores'].categories}
                           renderItem={({item}) => {
+                            // console.log('object -- ', item);
                             return (
                               <View style={{justifyContent: 'center'}}>
                                 <Text
@@ -105,7 +106,27 @@ const Home = props => {
                       </View>
                     </View>
                     <View style={{margin: 10}}>
-                      <Card data={item['procash/featured-stores']} />
+                      <FlatList
+                        horizontal={true}
+                        data={
+                          item['procash/featured-stores'].categories[2].stores
+                        }
+                        renderItem={({item}) => {
+                          console.log('stores -- >', item.stores);
+                          // const objItem = item;
+                          // console.log('objItem --- >', Object.values(objItem));
+                          return (
+                            <Card data={item} />
+                            // <FlatList
+                            //   horizontal={true}
+                            //   data={item.stores}
+                            //   renderItem={({item}) => {
+                            //     return <Card>{item}</Card>;
+                            //   }}
+                            // />
+                          );
+                        }}
+                      />
                     </View>
                   </View>
                 );
@@ -149,7 +170,25 @@ const Home = props => {
                       </View>
                     </View>
                     <View style={{margin: 10}}>
-                      <Card />
+                      <FlatList
+                        horizontal={true}
+                        data={item['procash/top-stores'].categories}
+                        renderItem={({item}) => {
+                          console.log('stores -- >', item);
+                          // const objItem = item;
+                          // console.log('objItem --- >', Object.values(objItem));
+                          return (
+                            <Card data={item} />
+                            // <FlatList
+                            //   horizontal={true}
+                            //   data={item.stores}
+                            //   renderItem={({item}) => {
+                            //     return <Card>{item}</Card>;
+                            //   }}
+                            // />
+                          );
+                        }}
+                      />
                     </View>
                   </View>
                 );
@@ -193,7 +232,25 @@ const Home = props => {
                       </View>
                     </View>
                     <View style={{margin: 10}}>
-                      <Card />
+                      <FlatList
+                        horizontal={true}
+                        data={item['procash/top-offers'].categories}
+                        renderItem={({item}) => {
+                          console.log('stores -- >', item);
+                          // const objItem = item;
+                          // console.log('objItem --- >', Object.values(objItem));
+                          return (
+                            <Card data={item} />
+                            // <FlatList
+                            //   horizontal={true}
+                            //   data={item.stores}
+                            //   renderItem={({item}) => {
+                            //     return <Card>{item}</Card>;
+                            //   }}
+                            // />
+                          );
+                        }}
+                      />
                     </View>
                   </View>
                 );
@@ -237,7 +294,25 @@ const Home = props => {
                       </View>
                     </View>
                     <View style={{margin: 10}}>
-                      <Card />
+                      <FlatList
+                        horizontal={true}
+                        data={item['procash/top-deals'].categories}
+                        renderItem={({item}) => {
+                          console.log('stores -- >', item);
+                          // const objItem = item;
+                          // console.log('objItem --- >', Object.values(objItem));
+                          return (
+                            <Card data={item} />
+                            // <FlatList
+                            //   horizontal={true}
+                            //   data={item.stores}
+                            //   renderItem={({item}) => {
+                            //     return <Card>{item}</Card>;
+                            //   }}
+                            // />
+                          );
+                        }}
+                      />
                     </View>
                   </View>
                 );
@@ -281,7 +356,25 @@ const Home = props => {
                       </View>
                     </View>
                     <View style={{margin: 10}}>
-                      <Card />
+                      <FlatList
+                        horizontal={true}
+                        data={item['procash/categories'].categories}
+                        renderItem={({item}) => {
+                          console.log('stores -- >', item);
+                          // const objItem = item;
+                          // console.log('objItem --- >', Object.values(objItem));
+                          return (
+                            <Card data={item} />
+                            // <FlatList
+                            //   horizontal={true}
+                            //   data={item.stores}
+                            //   renderItem={({item}) => {
+                            //     return <Card>{item}</Card>;
+                            //   }}
+                            // />
+                          );
+                        }}
+                      />
                     </View>
                   </View>
                 );
