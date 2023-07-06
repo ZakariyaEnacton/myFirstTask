@@ -109,10 +109,10 @@ const Home = props => {
                       <FlatList
                         horizontal={true}
                         data={
-                          item['procash/featured-stores'].categories[2].stores
+                          item['procash/featured-stores'].categories[0].stores
                         }
                         renderItem={({item}) => {
-                          console.log('stores -- >', item.stores);
+                          console.log('stores/featured-stores -- >', item);
                           // const objItem = item;
                           // console.log('objItem --- >', Object.values(objItem));
                           return (
@@ -172,9 +172,9 @@ const Home = props => {
                     <View style={{margin: 10}}>
                       <FlatList
                         horizontal={true}
-                        data={item['procash/top-stores'].categories}
+                        data={item['procash/top-stores'].categories[0].stores}
                         renderItem={({item}) => {
-                          console.log('stores -- >', item);
+                          console.log('stores/top-stores -- >', item);
                           // const objItem = item;
                           // console.log('objItem --- >', Object.values(objItem));
                           return (
@@ -234,13 +234,13 @@ const Home = props => {
                     <View style={{margin: 10}}>
                       <FlatList
                         horizontal={true}
-                        data={item['procash/top-offers'].categories}
+                        data={item['procash/top-offers'].categories[1].coupons}
                         renderItem={({item}) => {
-                          console.log('stores -- >', item);
+                          console.log('stores/top-offers -- >', item);
                           // const objItem = item;
                           // console.log('objItem --- >', Object.values(objItem));
                           return (
-                            <Card data={item} />
+                            <Card data={item.store} />
                             // <FlatList
                             //   horizontal={true}
                             //   data={item.stores}
@@ -296,13 +296,13 @@ const Home = props => {
                     <View style={{margin: 10}}>
                       <FlatList
                         horizontal={true}
-                        data={item['procash/top-deals'].categories}
+                        data={item['procash/top-deals'].categories[0].deals}
                         renderItem={({item}) => {
-                          console.log('stores -- >', item);
+                          console.log('stores/top-deals -- >', item.store);
                           // const objItem = item;
                           // console.log('objItem --- >', Object.values(objItem));
                           return (
-                            <Card data={item} />
+                            <Card data={item.store} />
                             // <FlatList
                             //   horizontal={true}
                             //   data={item.stores}
@@ -316,7 +316,7 @@ const Home = props => {
                     </View>
                   </View>
                 );
-              case 'procash/categories':
+                // case 'procash/categories':
                 return (
                   <View>
                     <View
