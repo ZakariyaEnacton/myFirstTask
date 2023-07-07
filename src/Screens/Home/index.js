@@ -108,276 +108,280 @@ const Home = props => {
                     <View style={{margin: 10}}>
                       <FlatList
                         horizontal={true}
-                        data={
-                          item['procash/featured-stores'].categories[0].stores
-                        }
+                        data={item['procash/featured-stores'].categories}
                         renderItem={({item}) => {
-                          console.log('stores/featured-stores -- >', item);
+                          console.log(
+                            'stores/featured-stores -- >',
+                            item.stores,
+                          );
+                          // return item.name === 'Handpicked'
+                          //   ? item.stores
+                          //   : null;
                           // const objItem = item;
                           // console.log('objItem --- >', Object.values(objItem));
-                          return (
-                            <Card data={item} />
-                            // <FlatList
-                            //   horizontal={true}
-                            //   data={item.stores}
-                            //   renderItem={({item}) => {
-                            //     return <Card>{item}</Card>;
-                            //   }}
-                            // />
-                          );
+                          // return (
+                          //   <Card data={item} />
+                          //   // <FlatList
+                          //   //   horizontal={true}
+                          //   //   data={item.stores}
+                          //   //   renderItem={({item}) => {
+                          //   //     return <Card>{item}</Card>;
+                          //   //   }}
+                          //   // />
+                          // );
                         }}
                       />
                     </View>
                   </View>
                 );
-              case 'procash/top-stores':
-                return (
-                  <View>
-                    <View
-                      style={{
-                        flex: 1,
-                        flexDirection: 'row',
-                      }}>
-                      <Text
-                        style={{
-                          textAlign: 'center',
-                          width: '30%',
-                          verticalAlign: 'middle',
-                        }}>
-                        Top Stores
-                      </Text>
-                      <View style={{width: '70%'}}>
-                        <FlatList
-                          horizontal={true}
-                          data={item['procash/top-stores'].categories}
-                          renderItem={({item}) => {
-                            return (
-                              <View style={{justifyContent: 'center'}}>
-                                <Text
-                                  onPress={() => {
-                                    console.log(item.name);
-                                  }}
-                                  style={{
-                                    width: 100,
-                                    textAlign: 'center',
-                                  }}>
-                                  {item.name}
-                                </Text>
-                              </View>
-                            );
-                          }}
-                        />
-                      </View>
-                    </View>
-                    <View style={{margin: 10}}>
-                      <FlatList
-                        horizontal={true}
-                        data={item['procash/top-stores'].categories[0].stores}
-                        renderItem={({item}) => {
-                          console.log('stores/top-stores -- >', item);
-                          // const objItem = item;
-                          // console.log('objItem --- >', Object.values(objItem));
-                          return (
-                            <Card data={item} />
-                            // <FlatList
-                            //   horizontal={true}
-                            //   data={item.stores}
-                            //   renderItem={({item}) => {
-                            //     return <Card>{item}</Card>;
-                            //   }}
-                            // />
-                          );
-                        }}
-                      />
-                    </View>
-                  </View>
-                );
-              case 'procash/top-offers':
-                return (
-                  <View>
-                    <View
-                      style={{
-                        flex: 1,
-                        flexDirection: 'row',
-                      }}>
-                      <Text
-                        style={{
-                          textAlign: 'center',
-                          width: '30%',
-                          verticalAlign: 'middle',
-                        }}>
-                        Top offers
-                      </Text>
-                      <View style={{width: '70%'}}>
-                        <FlatList
-                          horizontal={true}
-                          data={item['procash/top-offers'].categories}
-                          renderItem={({item}) => {
-                            return (
-                              <View style={{justifyContent: 'center'}}>
-                                <Text
-                                  onPress={() => {
-                                    console.log(item.name);
-                                  }}
-                                  style={{
-                                    width: 100,
-                                    textAlign: 'center',
-                                  }}>
-                                  {item.name}
-                                </Text>
-                              </View>
-                            );
-                          }}
-                        />
-                      </View>
-                    </View>
-                    <View style={{margin: 10}}>
-                      <FlatList
-                        horizontal={true}
-                        data={item['procash/top-offers'].categories[1].coupons}
-                        renderItem={({item}) => {
-                          console.log('stores/top-offers -- >', item);
-                          // const objItem = item;
-                          // console.log('objItem --- >', Object.values(objItem));
-                          return (
-                            <Card data={item.store} />
-                            // <FlatList
-                            //   horizontal={true}
-                            //   data={item.stores}
-                            //   renderItem={({item}) => {
-                            //     return <Card>{item}</Card>;
-                            //   }}
-                            // />
-                          );
-                        }}
-                      />
-                    </View>
-                  </View>
-                );
-              case 'procash/top-deals':
-                return (
-                  <View>
-                    <View
-                      style={{
-                        flex: 1,
-                        flexDirection: 'row',
-                      }}>
-                      <Text
-                        style={{
-                          textAlign: 'center',
-                          width: '30%',
-                          justifyContent: 'center',
-                        }}>
-                        Top deals
-                      </Text>
-                      <View style={{width: '70%'}}>
-                        <FlatList
-                          horizontal={true}
-                          data={item['procash/top-deals'].categories}
-                          renderItem={({item}) => {
-                            return (
-                              <View style={{justifyContent: 'center'}}>
-                                <Text
-                                  onPress={() => {
-                                    console.log(item.name);
-                                  }}
-                                  style={{
-                                    width: 100,
-                                    textAlign: 'center',
-                                  }}>
-                                  {item.name}
-                                </Text>
-                              </View>
-                            );
-                          }}
-                        />
-                      </View>
-                    </View>
-                    <View style={{margin: 10}}>
-                      <FlatList
-                        horizontal={true}
-                        data={item['procash/top-deals'].categories[0].deals}
-                        renderItem={({item}) => {
-                          console.log('stores/top-deals -- >', item.store);
-                          // const objItem = item;
-                          // console.log('objItem --- >', Object.values(objItem));
-                          return (
-                            <Card data={item.store} />
-                            // <FlatList
-                            //   horizontal={true}
-                            //   data={item.stores}
-                            //   renderItem={({item}) => {
-                            //     return <Card>{item}</Card>;
-                            //   }}
-                            // />
-                          );
-                        }}
-                      />
-                    </View>
-                  </View>
-                );
-                // case 'procash/categories':
-                return (
-                  <View>
-                    <View
-                      style={{
-                        flex: 1,
-                        flexDirection: 'row',
-                      }}>
-                      <Text
-                        style={{
-                          textAlign: 'center',
-                          width: '30%',
-                          verticalAlign: 'middle',
-                        }}>
-                        View Offers by Categories
-                      </Text>
-                      <View style={{width: '70%'}}>
-                        <FlatList
-                          horizontal={true}
-                          data={item['procash/categories'].categories}
-                          renderItem={({item}) => {
-                            return (
-                              <View style={{justifyContent: 'center'}}>
-                                <Text
-                                  onPress={() => {
-                                    console.log(item.name);
-                                  }}
-                                  style={{
-                                    width: 100,
-                                    textAlign: 'center',
-                                  }}>
-                                  {item.name}
-                                </Text>
-                              </View>
-                            );
-                          }}
-                        />
-                      </View>
-                    </View>
-                    <View style={{margin: 10}}>
-                      <FlatList
-                        horizontal={true}
-                        data={item['procash/categories'].categories}
-                        renderItem={({item}) => {
-                          console.log('stores -- >', item);
-                          // const objItem = item;
-                          // console.log('objItem --- >', Object.values(objItem));
-                          return (
-                            <Card data={item} />
-                            // <FlatList
-                            //   horizontal={true}
-                            //   data={item.stores}
-                            //   renderItem={({item}) => {
-                            //     return <Card>{item}</Card>;
-                            //   }}
-                            // />
-                          );
-                        }}
-                      />
-                    </View>
-                  </View>
-                );
+              // case 'procash/top-stores':
+              //   return (
+              //     <View>
+              //       <View
+              //         style={{
+              //           flex: 1,
+              //           flexDirection: 'row',
+              //         }}>
+              //         <Text
+              //           style={{
+              //             textAlign: 'center',
+              //             width: '30%',
+              //             verticalAlign: 'middle',
+              //           }}>
+              //           Top Stores
+              //         </Text>
+              //         <View style={{width: '70%'}}>
+              //           <FlatList
+              //             horizontal={true}
+              //             data={item['procash/top-stores'].categories}
+              //             renderItem={({item}) => {
+              //               return (
+              //                 <View style={{justifyContent: 'center'}}>
+              //                   <Text
+              //                     onPress={() => {
+              //                       console.log(item.name);
+              //                     }}
+              //                     style={{
+              //                       width: 100,
+              //                       textAlign: 'center',
+              //                     }}>
+              //                     {item.name}
+              //                   </Text>
+              //                 </View>
+              //               );
+              //             }}
+              //           />
+              //         </View>
+              //       </View>
+              //       <View style={{margin: 10}}>
+              //         <FlatList
+              //           horizontal={true}
+              //           data={item['procash/top-stores'].categories[0].stores}
+              //           renderItem={({item}) => {
+              //             console.log('stores/top-stores -- >', item);
+              //             // const objItem = item;
+              //             // console.log('objItem --- >', Object.values(objItem));
+              //             return (
+              //               <Card data={item} />
+              //               // <FlatList
+              //               //   horizontal={true}
+              //               //   data={item.stores}
+              //               //   renderItem={({item}) => {
+              //               //     return <Card>{item}</Card>;
+              //               //   }}
+              //               // />
+              //             );
+              //           }}
+              //         />
+              //       </View>
+              //     </View>
+              //   );
+              // case 'procash/top-offers':
+              //   return (
+              //     <View>
+              //       <View
+              //         style={{
+              //           flex: 1,
+              //           flexDirection: 'row',
+              //         }}>
+              //         <Text
+              //           style={{
+              //             textAlign: 'center',
+              //             width: '30%',
+              //             verticalAlign: 'middle',
+              //           }}>
+              //           Top offers
+              //         </Text>
+              //         <View style={{width: '70%'}}>
+              //           <FlatList
+              //             horizontal={true}
+              //             data={item['procash/top-offers'].categories}
+              //             renderItem={({item}) => {
+              //               return (
+              //                 <View style={{justifyContent: 'center'}}>
+              //                   <Text
+              //                     onPress={() => {
+              //                       console.log(item.name);
+              //                     }}
+              //                     style={{
+              //                       width: 100,
+              //                       textAlign: 'center',
+              //                     }}>
+              //                     {item.name}
+              //                   </Text>
+              //                 </View>
+              //               );
+              //             }}
+              //           />
+              //         </View>
+              //       </View>
+              //       <View style={{margin: 10}}>
+              //         <FlatList
+              //           horizontal={true}
+              //           data={item['procash/top-offers'].categories[1].coupons}
+              //           renderItem={({item}) => {
+              //             console.log('stores/top-offers -- >', item);
+              //             // const objItem = item;
+              //             // console.log('objItem --- >', Object.values(objItem));
+              //             return (
+              //               <Card data={item.store} />
+              //               // <FlatList
+              //               //   horizontal={true}
+              //               //   data={item.stores}
+              //               //   renderItem={({item}) => {
+              //               //     return <Card>{item}</Card>;
+              //               //   }}
+              //               // />
+              //             );
+              //           }}
+              //         />
+              //       </View>
+              //     </View>
+              //   );
+              // case 'procash/top-deals':
+              //   return (
+              //     <View>
+              //       <View
+              //         style={{
+              //           flex: 1,
+              //           flexDirection: 'row',
+              //         }}>
+              //         <Text
+              //           style={{
+              //             textAlign: 'center',
+              //             width: '30%',
+              //             justifyContent: 'center',
+              //           }}>
+              //           Top deals
+              //         </Text>
+              //         <View style={{width: '70%'}}>
+              //           <FlatList
+              //             horizontal={true}
+              //             data={item['procash/top-deals'].categories}
+              //             renderItem={({item}) => {
+              //               return (
+              //                 <View style={{justifyContent: 'center'}}>
+              //                   <Text
+              //                     onPress={() => {
+              //                       console.log(item.name);
+              //                     }}
+              //                     style={{
+              //                       width: 100,
+              //                       textAlign: 'center',
+              //                     }}>
+              //                     {item.name}
+              //                   </Text>
+              //                 </View>
+              //               );
+              //             }}
+              //           />
+              //         </View>
+              //       </View>
+              //       <View style={{margin: 10}}>
+              //         <FlatList
+              //           horizontal={true}
+              //           data={item['procash/top-deals'].categories[0].deals}
+              //           renderItem={({item}) => {
+              //             console.log('stores/top-deals -- >', item.store);
+              //             // const objItem = item;
+              //             // console.log('objItem --- >', Object.values(objItem));
+              //             return (
+              //               <Card data={item.store} />
+              //               // <FlatList
+              //               //   horizontal={true}
+              //               //   data={item.stores}
+              //               //   renderItem={({item}) => {
+              //               //     return <Card>{item}</Card>;
+              //               //   }}
+              //               // />
+              //             );
+              //           }}
+              //         />
+              //       </View>
+              //     </View>
+              //   );
+              //   // case 'procash/categories':
+              //   return (
+              //     <View>
+              //       <View
+              //         style={{
+              //           flex: 1,
+              //           flexDirection: 'row',
+              //         }}>
+              //         <Text
+              //           style={{
+              //             textAlign: 'center',
+              //             width: '30%',
+              //             verticalAlign: 'middle',
+              //           }}>
+              //           View Offers by Categories
+              //         </Text>
+              //         <View style={{width: '70%'}}>
+              //           <FlatList
+              //             horizontal={true}
+              //             data={item['procash/categories'].categories}
+              //             renderItem={({item}) => {
+              //               return (
+              //                 <View style={{justifyContent: 'center'}}>
+              //                   <Text
+              //                     onPress={() => {
+              //                       console.log(item.name);
+              //                     }}
+              //                     style={{
+              //                       width: 100,
+              //                       textAlign: 'center',
+              //                     }}>
+              //                     {item.name}
+              //                   </Text>
+              //                 </View>
+              //               );
+              //             }}
+              //           />
+              //         </View>
+              //       </View>
+              //       <View style={{margin: 10}}>
+              //         <FlatList
+              //           horizontal={true}
+              //           data={item['procash/categories'].categories}
+              //           renderItem={({item}) => {
+              //             console.log('stores -- >', item);
+              //             // const objItem = item;
+              //             // console.log('objItem --- >', Object.values(objItem));
+              //             return (
+              //               <Card data={item} />
+              //               // <FlatList
+              //               //   horizontal={true}
+              //               //   data={item.stores}
+              //               //   renderItem={({item}) => {
+              //               //     return <Card>{item}</Card>;
+              //               //   }}
+              //               // />
+              //             );
+              //           }}
+              //         />
+              //       </View>
+              //     </View>
+              //   );
               default:
                 null;
                 break;
