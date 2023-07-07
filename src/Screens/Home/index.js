@@ -408,7 +408,10 @@ const Home = props => {
           }}
         />
       </View>
-      <Text style={{textAlign: 'center'}}>Every. Single.Time</Text>
+      <Text style={{textAlign: 'center'}}>
+        Invite Friends & Get 5% Cashback for
+      </Text>
+      <Text style={{textAlign: 'center'}}>Life!Every. Single.Time</Text>
     </View>
   );
 };
