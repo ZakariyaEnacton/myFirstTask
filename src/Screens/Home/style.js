@@ -16,7 +16,7 @@ export const style = StyleSheet.create({
   },
   flatList: {
     // marginTop: StatusBar.currentHeight || 0,
-    height: '85%',
+    height: '90%',
   },
   view: {
     backgroundColor: Colors.lightViolet,
