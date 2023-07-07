@@ -408,7 +408,7 @@ const Home = props => {
           }}
         />
       </View>
-      <Text>Hello</Text>
+      <Text style={{textAlign: 'center'}}>Hello</Text>
     </View>
   );
 };
