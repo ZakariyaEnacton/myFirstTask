@@ -10,12 +10,13 @@ export const style = StyleSheet.create({
     borderRadius: 20,
     textAlign: 'center',
   },
+
   text: {
     textAlign: 'center',
   },
   flatList: {
-    marginTop: StatusBar.currentHeight || 0,
-    height: '95%',
+    // marginTop: StatusBar.currentHeight || 0,
+    height: '85%',
   },
   view: {
     backgroundColor: Colors.lightViolet,
@@ -25,6 +26,8 @@ export const style = StyleSheet.create({
   imgView: {
     height: 150,
     margin: 10,
+    borderRadius: 10,
+    resizeMode: 'contain',
   },
   // lgBtn: {
   //   height: '4%',

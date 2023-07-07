@@ -7,4 +7,6 @@ export const Colors = {
   zircon: '#dde2e2',
   gray: '#a6a9a8',
   splashColor: ['#c8a1ff', '#8eadff'],
+  midnight_Blue: '#1F2732',
+  silver: '#C0C0C0',
 };
