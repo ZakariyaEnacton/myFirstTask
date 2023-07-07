@@ -408,7 +408,7 @@ const Home = props => {
           }}
         />
       </View>
-      <View style={{backgroundColor: 'red', height: 50}}>
+      <View style={{backgroundColor: '#E6936B', height: 30}}>
         <Text>Hello</Text>
       </View>
     </View>

@@ -19,10 +19,10 @@ const HomeHeader = () => {
         </View>
       </View>
       <View style={style.searchSection}>
-        <Icon name="search" size={24} style={style.icon} />
+        {/* <Icon name="search" size={24} style={style.icon} /> */}
         <TextInput
           placeholder="Search Cashback, Stores,Categories"
-          placeholderTextColor={Colors.Silver}
+          placeholderTextColor={Colors.silver}
           style={style.txtInp}
         />
       </View>
